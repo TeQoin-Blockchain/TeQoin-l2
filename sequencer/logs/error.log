@@ -1,0 +1,81 @@
+❌ 2025-12-22 12:32:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:33:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:34:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:35:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:36:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:37:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:38:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:39:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:40:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:41:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:42:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:43:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:44:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:45:05 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:47:55 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:47:55 [ERROR]: Error stack:
+❌ 2025-12-22 12:47:55 [ERROR]: Error details:
+❌ 2025-12-22 12:57:42 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 12:57:42 [ERROR]: Error stack:
+❌ 2025-12-22 12:57:42 [ERROR]: Error details:
+❌ 2025-12-22 13:00:41 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 13:00:41 [ERROR]: Error stack:
+❌ 2025-12-22 13:00:41 [ERROR]: Error details:
+❌ 2025-12-22 13:01:41 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 13:01:41 [ERROR]: Error stack:
+❌ 2025-12-22 13:01:41 [ERROR]: Error details:
+❌ 2025-12-22 13:02:41 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 13:02:41 [ERROR]: Error stack:
+❌ 2025-12-22 13:02:41 [ERROR]: Error details:
+❌ 2025-12-22 13:03:41 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 13:03:41 [ERROR]: Error stack:
+❌ 2025-12-22 13:03:41 [ERROR]: Error details:
+❌ 2025-12-22 14:18:13 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 14:18:13 [ERROR]: Error stack:
+❌ 2025-12-22 14:18:13 [ERROR]: Error details:
+❌ 2025-12-22 14:20:51 [ERROR]: Failed to submit batch:
+❌ 2025-12-22 14:20:51 [ERROR]: Error stack:
+❌ 2025-12-22 14:20:51 [ERROR]: Error details:
+❌ 2025-12-22 14:26:46 [ERROR]: 
+❌ BATCH SUBMISSION FAILED!
+❌ 2025-12-22 14:26:46 [ERROR]: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ 2025-12-22 14:26:46 [ERROR]: Type: object
+❌ 2025-12-22 14:26:46 [ERROR]: Message: invalid address (argument="address", value="0x74ca8b99b2b8e3f81ababd8ff7f3c9d9c442751576ec87c70ff5fa960f0b9533", code=INVALID_ARGUMENT, version=6.16.0) (argument="", value="0x74ca8b99b2b8e3f81ababd8ff7f3c9d9c442751576ec87c70ff5fa960f0b9533", code=INVALID_ARGUMENT, version=6.16.0)
+❌ 2025-12-22 14:26:46 [ERROR]: Code: INVALID_ARGUMENT
+❌ 2025-12-22 14:26:46 [ERROR]: Stack trace:
+❌ 2025-12-22 14:26:46 [ERROR]: TypeError: invalid address (argument="address", value="0x74ca8b99b2b8e3f81ababd8ff7f3c9d9c442751576ec87c70ff5fa960f0b9533", code=INVALID_ARGUMENT, version=6.16.0) (argument="", value="0x74ca8b99b2b8e3f81ababd8ff7f3c9d9c442751576ec87c70ff5fa960f0b9533", code=INVALID_ARGUMENT, version=6.16.0)
+    at makeError (/data/l2/sequencer/node_modules/ethers/lib.commonjs/utils/errors.js:130:21)
+    at assert (/data/l2/sequencer/node_modules/ethers/lib.commonjs/utils/errors.js:157:15)
+    at assertArgument (/data/l2/sequencer/node_modules/ethers/lib.commonjs/utils/errors.js:169:5)
+    at AddressCoder._throwError (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/abstract-coder.js:341:39)
+    at AddressCoder.encode (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/address.js:24:25)
+    at /data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/array.js:47:19
+    at Array.forEach (<anonymous>)
+    at pack (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/array.js:33:12)
+    at TupleCoder.encode (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/tuple.js:60:36)
+    at AbiCoder.encode (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/abi-coder.js:170:15)
+❌ 2025-12-22 14:26:46 [ERROR]: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ 2025-12-22 14:29:11 [ERROR]: 
+❌ BATCH SUBMISSION FAILED!
+❌ 2025-12-22 14:29:11 [ERROR]: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ 2025-12-22 14:29:11 [ERROR]: Type: object
+❌ 2025-12-22 14:29:11 [ERROR]: Message: invalid address (argument="address", value="0xec862a7539b46bd7c2af80d2c5a1fb516c97c72f66dea1a8e25fb60b3b024dea", code=INVALID_ARGUMENT, version=6.16.0) (argument="", value="0xec862a7539b46bd7c2af80d2c5a1fb516c97c72f66dea1a8e25fb60b3b024dea", code=INVALID_ARGUMENT, version=6.16.0)
+❌ 2025-12-22 14:29:11 [ERROR]: Code: INVALID_ARGUMENT
+❌ 2025-12-22 14:29:11 [ERROR]: Stack trace:
+❌ 2025-12-22 14:29:11 [ERROR]: TypeError: invalid address (argument="address", value="0xec862a7539b46bd7c2af80d2c5a1fb516c97c72f66dea1a8e25fb60b3b024dea", code=INVALID_ARGUMENT, version=6.16.0) (argument="", value="0xec862a7539b46bd7c2af80d2c5a1fb516c97c72f66dea1a8e25fb60b3b024dea", code=INVALID_ARGUMENT, version=6.16.0)
+    at makeError (/data/l2/sequencer/node_modules/ethers/lib.commonjs/utils/errors.js:130:21)
+    at assert (/data/l2/sequencer/node_modules/ethers/lib.commonjs/utils/errors.js:157:15)
+    at assertArgument (/data/l2/sequencer/node_modules/ethers/lib.commonjs/utils/errors.js:169:5)
+    at AddressCoder._throwError (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/abstract-coder.js:341:39)
+    at AddressCoder.encode (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/address.js:24:25)
+    at /data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/array.js:47:19
+    at Array.forEach (<anonymous>)
+    at pack (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/array.js:33:12)
+    at TupleCoder.encode (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/coders/tuple.js:60:36)
+    at AbiCoder.encode (/data/l2/sequencer/node_modules/ethers/lib.commonjs/abi/abi-coder.js:170:15)
+❌ 2025-12-22 14:29:11 [ERROR]: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ 2025-12-23 10:40:28 [ERROR]: credit l2 balance Failed, execution reverted: "Token not mapped" (action="estimateGas", data="0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000010546f6b656e206e6f74206d617070656400000000000000000000000000000000", reason="Token not mapped", transaction={ "data": "0xb44debb90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e2b9f0ad372b6ad31f5d679437ade9b93c973f3e0000000000000000000000000000000000000000000000000001c6bf526340000000000000000000000000000000000000000000000000000000000000000002", "from": "0x050bF90cc79D7a4acA382B233002303Fb7baA5a3", "to": "0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94" }, invocation=null, revert={ "args": [ "Token not mapped" ], "name": "Error", "signature": "Error(string)" }, code=CALL_EXCEPTION, version=6.16.0)
+❌ 2025-12-23 10:45:02 [ERROR]: credit l2 balance Failed, execution reverted: "Token not mapped" (action="estimateGas", data="0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000010546f6b656e206e6f74206d617070656400000000000000000000000000000000", reason="Token not mapped", transaction={ "data": "0xb44debb90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e2b9f0ad372b6ad31f5d679437ade9b93c973f3e0000000000000000000000000000000000000000000000000001c6bf526340000000000000000000000000000000000000000000000000000000000000000003", "from": "0x050bF90cc79D7a4acA382B233002303Fb7baA5a3", "to": "0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94" }, invocation=null, revert={ "args": [ "Token not mapped" ], "name": "Error", "signature": "Error(string)" }, code=CALL_EXCEPTION, version=6.16.0)
+❌ 2025-12-23 12:47:57 [ERROR]:    ❌ Failed to credit balance: transaction execution reverted (action="sendTransaction", data=null, reason=null, invocation=null, revert=null, transaction={ "data": "", "from": "0x050bF90cc79D7a4acA382B233002303Fb7baA5a3", "to": "0x8320f935964e0e7aEbBEC7F336e01D5778AC7051" }, receipt={ "_type": "TransactionReceipt", "blobGasPrice": null, "blobGasUsed": null, "blockHash": "0xb2226619eb612dcec03a4755c679c437c592c2ec8ea5cae2029802af287b24d4", "blockNumber": 18213, "contractAddress": null, "cumulativeGasUsed": "21949", "from": "0x050bF90cc79D7a4acA382B233002303Fb7baA5a3", "gasPrice": "1000000007", "gasUsed": "21949", "hash": "0x9b1956a9c4cc9e77d59150c3d5391ad77ef1effadfdc55607799f2310cb459a8", "index": 0, "logs": [  ], "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "root": null, "status": 0, "to": "0x8320f935964e0e7aEbBEC7F336e01D5778AC7051" }, code=CALL_EXCEPTION, version=6.16.0)

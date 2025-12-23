@@ -1,0 +1,26 @@
+{
+  "name": "l2-sequencer",
+  "version": "1.0.0",
+  "description": "L2 Rollup Sequencer",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "ethers": "^6.16.0",
+    "dotenv": "^17.0.0",
+    "winston": "^3.11.0",
+    "pg": "^8.11.0",
+    "ioredis": "^5.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.0",
+    "@types/pg": "^8.10.0",
+    "ts-node": "^10.9.2",
+    "nodemon": "^3.0.2"
+  }
+}
