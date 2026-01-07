@@ -1,20 +1,25 @@
 {
   "name": "l2-sequencer",
   "version": "1.0.0",
-  "description": "L2 Rollup Sequencer",
+  "description": "L2 Mvp Sequencer for TeQoin",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prestart": "npm run build",
+    "db.migrate": "ts-node ./node_modules/typeorm/cli.js migration:run -d src/data-source.ts"
   },
+  "author": "TeQoin Team",
+  "license": "MIT",
   "dependencies": {
     "ethers": "^6.16.0",
     "dotenv": "^17.0.0",
     "winston": "^3.11.0",
     "pg": "^8.11.0",
-    "ioredis": "^5.3.0"
+    "ioredis": "^5.3.0",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
