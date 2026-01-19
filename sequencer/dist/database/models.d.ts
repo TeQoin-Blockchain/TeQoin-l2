@@ -1,0 +1,33 @@
+import { Deposit, Withdrawal, Batch, SequencerStats } from '../types';
+export declare function saveDeposit(deposit: Deposit): Promise<void>;
+export declare function getPendingDeposits(limit?: number): Promise<Deposit[]>;
+export declare function markDepositProcessed(depositId: string, l2TxHash: string): Promise<void>;
+export declare function getDepositById(depositId: string): Promise<Deposit | null>;
+export declare function saveWithdrawal(withdrawal: Withdrawal): Promise<void>;
+export declare function getPendingWithdrawals(limit?: number): Promise<Withdrawal[]>;
+export declare function markWithdrawalQueued(withdrawalId: string): Promise<void>;
+export declare function saveBatch(batch: Batch): Promise<void>;
+export declare function markBatchSubmitted(batchNumber: bigint, l1TxHash: string): Promise<void>;
+export declare function getLastBatchNumber(): Promise<bigint>;
+export declare function getLastSubmittedBlock(): Promise<bigint>;
+export declare function getState(key: string): Promise<string | null>;
+export declare function setState(key: string, value: string): Promise<void>;
+export declare function getStats(): Promise<SequencerStats>;
+declare const _default: {
+    saveDeposit: typeof saveDeposit;
+    getPendingDeposits: typeof getPendingDeposits;
+    markDepositProcessed: typeof markDepositProcessed;
+    getDepositById: typeof getDepositById;
+    saveWithdrawal: typeof saveWithdrawal;
+    getPendingWithdrawals: typeof getPendingWithdrawals;
+    markWithdrawalQueued: typeof markWithdrawalQueued;
+    saveBatch: typeof saveBatch;
+    markBatchSubmitted: typeof markBatchSubmitted;
+    getLastBatchNumber: typeof getLastBatchNumber;
+    getLastSubmittedBlock: typeof getLastSubmittedBlock;
+    getState: typeof getState;
+    setState: typeof setState;
+    getStats: typeof getStats;
+};
+export default _default;
+//# sourceMappingURL=models.d.ts.map

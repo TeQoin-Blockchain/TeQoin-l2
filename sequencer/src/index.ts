@@ -1,85 +1,154 @@
-import dotenv from 'dotenv';
-import { logger } from './utils/logger';
-import { DatabaseService } from './services/database';
-import { RedisService } from './services/redis';
-import { Sequencer, SequencerConfig } from './services/sequencer';
+import express from 'express';
+import { getConfig } from './config/config';
+import { initDatabase, closeDatabase } from './database/connection';
+import { SequencerManagerService } from './services/sequencer-manager.service';
+import { logger, logService } from './utils/logger';
+import { HealthCheckResponse } from './types';
 
-dotenv.config();
+// ═══════════════════════════════════════════════════════
+// MAIN ENTRY POINT
+// ═══════════════════════════════════════════════════════
+
+let sequencerManager: SequencerManagerService | null = null;
+let healthCheckServer: any = null;
 
 async function main() {
-  logger.info('════════════════════════════════════════════════════════');
-  logger.info('           L2 ROLLUP SEQUENCER - PRODUCTION             ');
-  logger.info('════════════════════════════════════════════════════════\n');
-
-  // Validate environment
-  const requiredEnvVars = [
-    'L1_RPC_URL',
-    'L2_RPC_URL',
-    'SEQUENCER_PRIVATE_KEY',
-    'L1_BRIDGE_ADDRESS',
-    'L1_STATE_COMMITMENT_ADDRESS',
-    'L2_BRIDGE_ADDRESS',
-  ];
-
-  for (const envVar of requiredEnvVars) {
-    if (!process.env[envVar]) {
-      logger.error(`❌ Missing environment variable: ${envVar}`);
-      process.exit(1);
-    }
+  try {
+    logger.info('═'.repeat(60));
+    logger.info('🚀 L2 SEQUENCER SERVICE');
+    logger.info('═'.repeat(60));
+    
+    // Load configuration
+    const config = getConfig();
+    
+    // Initialize database
+    await initDatabase(config.database.url);
+    
+    // Create sequencer manager
+    sequencerManager = new SequencerManagerService(config);
+    
+    // Start health check server
+    await startHealthCheckServer(config.healthCheck.port);
+    
+    // Start all services
+    await sequencerManager.startAll();
+    
+    logger.info('═'.repeat(60));
+    logger.info('✅ SEQUENCER SERVICE RUNNING');
+    logger.info(`📡 Health check: http://localhost:${config.healthCheck.port}/health`);
+    logger.info('═'.repeat(60));
+    
+  } catch (error: any) {
+    logger.error('Failed to start sequencer service', { 
+      error: error?.message || String(error),
+      code: error?.code,
+      stack: error?.stack
+    });
+    process.exit(1);
   }
+}
 
-  // Initialize database
-  const db = new DatabaseService({
-    host: process.env.POSTGRES_HOST || 'localhost',
-    port: parseInt(process.env.POSTGRES_PORT || '5432'),
-    database: process.env.POSTGRES_DB || 'sequencer',
-    user: process.env.POSTGRES_USER || 'sequencer',
-    password: process.env.POSTGRES_PASSWORD || '',
+/**
+ * Start health check HTTP server
+ */
+async function startHealthCheckServer(port: number): Promise<void> {
+  const app = express();
+  
+  // Health check endpoint
+  app.get('/health', async (req, res) => {
+    try {
+      if (!sequencerManager) {
+        return res.status(503).json({
+          status: 'unhealthy',
+          message: 'Sequencer manager not initialized',
+        });
+      }
+      
+      const serviceStatus = sequencerManager.getServiceStatus();
+      const stats = await sequencerManager.getStats();
+      const uptime = sequencerManager.getUptime();
+      const isHealthy = sequencerManager.isHealthy();
+      
+      const response: HealthCheckResponse = {
+        status: isHealthy ? 'healthy' : 'unhealthy',
+        timestamp: new Date(),
+        services: serviceStatus,
+        stats,
+        uptime,
+      };
+      
+      res.status(isHealthy ? 200 : 503).json(response);
+      
+    } catch (error) {
+      logger.error('Health check failed', { error });
+      res.status(500).json({
+        status: 'error',
+        message: 'Health check failed',
+      });
+    }
   });
-
-  await db.connect();
-
-  // Initialize Redis
-  const redis = new RedisService({
-    host: process.env.REDIS_HOST || 'localhost',
-    port: parseInt(process.env.REDIS_PORT || '6379'),
+  
+  // Root endpoint
+  app.get('/', (req, res) => {
+    res.json({
+      service: 'L2 Sequencer Service',
+      version: '1.0.0',
+      status: 'running',
+      endpoints: {
+        health: '/health',
+      },
+    });
   });
-
-  // Initialize Sequencer
-  const config: SequencerConfig = {
-    l1RpcUrl: process.env.L1_RPC_URL!,
-    l2RpcUrl: process.env.L2_RPC_URL!,
-    sequencerPrivateKey: process.env.SEQUENCER_PRIVATE_KEY!,
-    l1BridgeAddress: process.env.L1_BRIDGE_ADDRESS!,
-    l1StateCommitmentAddress: process.env.L1_STATE_COMMITMENT_ADDRESS!,
-    l2BridgeAddress: process.env.L2_BRIDGE_ADDRESS!,
-    blockTimeMs: parseInt(process.env.BLOCK_TIME_MS || '5000'),
-    batchIntervalMs: parseInt(process.env.BATCH_INTERVAL_MS || '60000'),
-    batchSize: parseInt(process.env.BATCH_SIZE || '100'),
-  };
-
-  const sequencer = new Sequencer(config, db, redis);
-
-  // Start sequencer
-  await sequencer.start();
-
-  // Graceful shutdown
-  process.on('SIGINT', async () => {
-    await sequencer.stop();
-    await db.close();
-    await redis.close();
-    process.exit(0);
-  });
-
-  process.on('SIGTERM', async () => {
-    await sequencer.stop();
-    await db.close();
-    await redis.close();
-    process.exit(0);
+  
+  // Start server
+  healthCheckServer = app.listen(port, () => {
+    logService('HEALTH-CHECK', `Server started on port ${port}`);
   });
 }
 
-main().catch((error) => {
-  logger.error('Fatal error:', error);
-  process.exit(1);
+/**
+ * Graceful shutdown
+ */
+async function shutdown(signal: string): Promise<void> {
+  logger.info(`Received ${signal}, starting graceful shutdown...`);
+  
+  try {
+    // Stop sequencer services
+    if (sequencerManager) {
+      await sequencerManager.stopAll();
+    }
+    
+    // Close health check server
+    if (healthCheckServer) {
+      healthCheckServer.close();
+    }
+    
+    // Close database
+    await closeDatabase();
+    
+    logger.info('Graceful shutdown completed');
+    process.exit(0);
+    
+  } catch (error) {
+    logger.error('Error during shutdown', { error });
+    process.exit(1);
+  }
+}
+
+// Handle shutdown signals
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+
+// Handle uncaught errors
+process.on('uncaughtException', (error) => {
+  logger.error('Uncaught exception', { error });
+  shutdown('uncaughtException');
 });
+
+process.on('unhandledRejection', (reason) => {
+  logger.error('Unhandled rejection', { reason });
+  shutdown('unhandledRejection');
+});
+
+// Start the service
+main();

@@ -15,16 +15,18 @@ if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir, { recursive: true });
 }
 
-// Custom format
+// Custom format with BigInt support
 const customFormat = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   winston.format.errors({ stack: true }),
   winston.format.printf(({ timestamp, level, message, stack, ...meta }) => {
     let log = `[${timestamp}] ${level.toUpperCase()}: ${message}`;
     
-    // Add metadata if present
+    // Add metadata if present (with BigInt serialization)
     if (Object.keys(meta).length > 0) {
-      log += ` ${JSON.stringify(meta)}`;
+      log += ` ${JSON.stringify(meta, (key, value) =>
+        typeof value === 'bigint' ? value.toString() : value
+      )}`;
     }
     
     // Add stack trace for errors
