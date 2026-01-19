@@ -1,0 +1,1856 @@
+[2026-01-07 09:36:07] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:36:07] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 09:36:07] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:36:07] INFO: Loading configuration...
+[2026-01-07 09:36:07] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 09:36:07] INFO: Initializing database connection...
+[2026-01-07 09:36:07] INFO: Database connected successfully
+[2026-01-07 09:36:07] INFO: Running database migrations...
+[2026-01-07 09:36:07] ERROR: Database query failed {"text":"CREATE INDEX IF NOT EXISTS idx_batches_submitted ON batches(submitted);","error":{"length":99,"name":"error","severity":"ERROR","code":"42703","file":"indexcmds.c","line":"1831","routine":"ComputeIndexAttrs"}}
+[2026-01-07 09:40:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:40:20] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 09:40:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:40:20] INFO: Loading configuration...
+[2026-01-07 09:40:20] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 09:40:20] INFO: Initializing database connection...
+[2026-01-07 09:40:20] INFO: Database connected successfully
+[2026-01-07 09:40:20] INFO: Running database migrations...
+[2026-01-07 09:40:20] INFO: Database migrations completed
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 09:40:20] INFO: [L1-LISTENER] Starting...
+[2026-01-07 09:40:20] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","chainId":11155111}
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 09:40:20] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 09:40:20] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 09:40:20] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 09:40:20] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 09:40:20] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 09:40:20] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 09:40:20] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","batchSize":100,"batchInterval":500}
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 09:40:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:40:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:40:20] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 09:40:20] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 09:40:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:40:54] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 09:41:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:41:49] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 09:41:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:41:49] INFO: Loading configuration...
+[2026-01-07 09:41:49] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 09:41:49] INFO: Initializing database connection...
+[2026-01-07 09:41:49] INFO: Database connected successfully
+[2026-01-07 09:41:49] INFO: Running database migrations...
+[2026-01-07 09:41:49] INFO: Database migrations completed
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 09:41:49] INFO: [L1-LISTENER] Starting...
+[2026-01-07 09:41:49] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","chainId":11155111}
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 09:41:49] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 09:41:49] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 09:41:49] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 09:41:49] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 09:41:49] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 09:41:49] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 09:41:49] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","batchSize":100,"batchInterval":500}
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 09:41:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 09:41:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:41:49] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 09:41:49] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 09:41:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:42:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:43:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:43:53] ERROR: Health check failed {"error":{}}
+[2026-01-07 09:44:01] ERROR: Health check failed {"error":{}}
+[2026-01-07 09:44:33] ERROR: Health check failed {"error":{}}
+[2026-01-07 09:44:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:45:19] ERROR: Health check failed {"error":{}}
+[2026-01-07 09:45:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:46:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:47:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:47:53] ERROR: Health check failed {"error":{}}
+[2026-01-07 09:48:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:49:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:50:09] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 09:50:10] INFO: [BATCH #1] Transaction sent {"hash":"0xaf1586f4c2a0d6387b20a5b775078a4c24c7aaeb263bd3841d66d2b84c5704f9"}
+[2026-01-07 09:50:27] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0xcb299bf698fe022b9077bd2deb097136912266362bffbb6759cf57a031da6746","blockNumber":9995514,"contractAddress":null,"cumulativeGasUsed":"4873206","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000008","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0xaf1586f4c2a0d6387b20a5b775078a4c24c7aaeb263bd3841d66d2b84c5704f9","index":58,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 09:50:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:51:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:52:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:52:12] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 09:52:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 09:52:12] INFO: Loading configuration...
+[2026-01-07 09:52:12] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 09:52:12] INFO: Initializing database connection...
+[2026-01-07 09:52:12] INFO: Database connected successfully
+[2026-01-07 09:52:12] INFO: Running database migrations...
+[2026-01-07 09:52:12] INFO: Database migrations completed
+[2026-01-07 09:52:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:53:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:54:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:55:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:56:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:57:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:58:29] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 09:58:30] INFO: [BATCH #1] Transaction sent {"hash":"0xb345f0a64d8cc08632c5888dc736c6dbee3e312a92a01e983ad7a5fb758ee94b"}
+[2026-01-07 09:58:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 09:58:51] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x541a6e975c2a6315bb237b38c57f0aea4e3fbb67fc565d56c0c7787db36fd21d","blockNumber":9995550,"contractAddress":null,"cumulativeGasUsed":"14955884","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000011","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0xb345f0a64d8cc08632c5888dc736c6dbee3e312a92a01e983ad7a5fb758ee94b","index":110,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 09:59:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:00:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:01:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:02:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:03:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:04:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:05:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:06:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:06:49] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 10:06:50] INFO: [BATCH #1] Transaction sent {"hash":"0x9c3309095cfb56bead526cd9f664f30d92f5162cab990a720827e37760f84ffb"}
+[2026-01-07 10:07:03] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x9fe474f68153f2b130f402c72e20888d9bc430e33b1234a144a010e429e29dd6","blockNumber":9995587,"contractAddress":null,"cumulativeGasUsed":"5707165","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000009","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0x9c3309095cfb56bead526cd9f664f30d92f5162cab990a720827e37760f84ffb","index":32,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 10:07:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:08:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:09:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:10:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:11:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:12:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:13:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:14:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:15:09] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 10:15:10] INFO: [BATCH #1] Transaction sent {"hash":"0x9c76c70a99ee56a9f2e8b86ea690aab995cc13f09651d87e8d0d35e28728fd20"}
+[2026-01-07 10:15:15] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x717c31e4fd7c1e4ebe0d9e4a3d96342aa519a6ea3eeb1fffe440935759fd1f8c","blockNumber":9995625,"contractAddress":null,"cumulativeGasUsed":"12912159","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000008","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0x9c76c70a99ee56a9f2e8b86ea690aab995cc13f09651d87e8d0d35e28728fd20","index":133,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 10:15:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:16:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:17:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:18:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:19:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:20:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:21:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:22:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:23:29] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 10:23:30] INFO: [BATCH #1] Transaction sent {"hash":"0xbfded3fc69a41729752780f015cd05749a622245aad6f3ca6ada3d331b066133"}
+[2026-01-07 10:23:39] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0xe05ffe2fb32d443419034ce1312656e13096ab1658bfd39eef5d19335d2f2517","blockNumber":9995661,"contractAddress":null,"cumulativeGasUsed":"12013975","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000009","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0xbfded3fc69a41729752780f015cd05749a622245aad6f3ca6ada3d331b066133","index":131,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 10:23:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:24:49] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:25:07] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 10:25:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:25:12] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 10:25:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:25:12] INFO: Loading configuration...
+[2026-01-07 10:25:12] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 10:25:12] INFO: Initializing database connection...
+[2026-01-07 10:25:12] INFO: Database connected successfully
+[2026-01-07 10:25:12] INFO: Running database migrations...
+[2026-01-07 10:25:12] INFO: Database migrations completed
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 10:25:12] INFO: [L1-LISTENER] Starting...
+[2026-01-07 10:25:12] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","chainId":11155111}
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 10:25:12] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 10:25:12] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 10:25:12] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 10:25:12] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 10:25:12] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 10:25:12] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 10:25:12] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x9C86F630F6b5bfF11fD4e19Fea02b44677A0Ff94","batchSize":100,"batchInterval":500}
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 10:25:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:25:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:25:12] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 10:25:12] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 10:25:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:26:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:27:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:28:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:29:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:30:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:30:51] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 10:30:56] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:30:56] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 10:30:56] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:30:56] INFO: Loading configuration...
+[2026-01-07 10:30:56] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 10:30:56] INFO: Initializing database connection...
+[2026-01-07 10:30:56] INFO: Database connected successfully
+[2026-01-07 10:30:56] INFO: Running database migrations...
+[2026-01-07 10:30:56] INFO: Database migrations completed
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 10:30:56] INFO: [L1-LISTENER] Starting...
+[2026-01-07 10:30:56] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 10:30:56] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 10:30:56] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 10:30:56] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 10:30:56] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 10:30:56] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 10:30:56] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 10:30:56] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 10:30:56] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:30:56] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:30:56] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 10:30:56] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 10:30:56] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:31:56] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:32:56] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:33:56] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:34:24] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 10:40:08] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:40:08] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 10:40:08] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:40:08] INFO: Loading configuration...
+[2026-01-07 10:40:08] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 10:40:08] INFO: Initializing database connection...
+[2026-01-07 10:40:08] INFO: Database connected successfully
+[2026-01-07 10:40:08] INFO: Running database migrations...
+[2026-01-07 10:40:08] INFO: Database migrations completed
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 10:40:08] INFO: [L1-LISTENER] Starting...
+[2026-01-07 10:40:08] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 10:40:08] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 10:40:08] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 10:40:08] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 10:40:08] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 10:40:08] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 10:40:08] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 10:40:08] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 10:40:08] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:40:08] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:40:08] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 10:40:08] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 10:40:08] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:41:08] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:41:32] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 10:44:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:44:40] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 10:44:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:44:40] INFO: Loading configuration...
+[2026-01-07 10:44:40] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 10:44:40] INFO: Initializing database connection...
+[2026-01-07 10:44:40] INFO: Database connected successfully
+[2026-01-07 10:44:40] INFO: Running database migrations...
+[2026-01-07 10:44:40] INFO: Database migrations completed
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 10:44:40] INFO: [L1-LISTENER] Starting...
+[2026-01-07 10:44:40] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 10:44:40] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 10:44:40] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 10:44:40] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 10:44:40] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 10:44:40] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 10:44:40] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 10:44:40] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 10:44:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 10:44:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:44:40] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 10:44:40] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 10:44:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 10:45:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:46:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:47:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:48:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:49:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:50:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:51:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:52:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:53:00] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 10:53:01] INFO: [BATCH #1] Transaction sent {"hash":"0x63f5dcb619a48223258a03bc51ecd7ffb6ed7c439e8228ff13dba2c64a2d609c"}
+[2026-01-07 10:53:14] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x3322f53c17e8b85e18a69f41d7d8e8743b5aac3ec4b1fe402f7630872c33b9a8","blockNumber":9995794,"contractAddress":null,"cumulativeGasUsed":"12281096","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000012","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0x63f5dcb619a48223258a03bc51ecd7ffb6ed7c439e8228ff13dba2c64a2d609c","index":51,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 10:53:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:54:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:55:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:56:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:57:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:58:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 10:59:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:00:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:01:20] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 11:01:21] INFO: [BATCH #1] Transaction sent {"hash":"0x5601b727d17fc27c73ac0e4953bdcdc3ed3250f9a3b380b2b54ffbd0fb0b471d"}
+[2026-01-07 11:01:25] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x5d8ad83db2d21eb5fe8a9a6f01ea1635fc074a2fd8a0ccd784151ced4b9e58c7","blockNumber":9995829,"contractAddress":null,"cumulativeGasUsed":"14000580","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000013","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0x5601b727d17fc27c73ac0e4953bdcdc3ed3250f9a3b380b2b54ffbd0fb0b471d","index":71,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 11:01:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:02:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:03:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:04:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:05:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:06:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:07:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:08:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:09:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:09:40] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 11:09:41] INFO: [BATCH #1] Transaction sent {"hash":"0xf8e95744ccf09ecdf7cdcbb420c1c07355224473f0a3739b0bb86013962377de"}
+[2026-01-07 11:09:50] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x59abce081a899ba22420f318f5807c9a70f1152a405c2145fcc0cc88c67543e1","blockNumber":9995863,"contractAddress":null,"cumulativeGasUsed":"32566396","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000013","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0xf8e95744ccf09ecdf7cdcbb420c1c07355224473f0a3739b0bb86013962377de","index":89,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 11:10:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:11:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:12:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:13:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:14:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:15:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:16:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:17:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:18:00] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 11:18:01] INFO: [BATCH #1] Transaction sent {"hash":"0xa7689ff8119012cb6b01b43838c4a87f36991df927e217311739cf097d26d215"}
+[2026-01-07 11:18:14] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x08a73c60f37bcdc4920f88c202a147eabc57c84d7c893d04b2e63d98495b3e57","blockNumber":9995901,"contractAddress":null,"cumulativeGasUsed":"6564623","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000009","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0xa7689ff8119012cb6b01b43838c4a87f36991df927e217311739cf097d26d215","index":63,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 11:18:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:19:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:20:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:21:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:22:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:23:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:24:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:25:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:26:20] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 11:26:21] INFO: [BATCH #1] Transaction sent {"hash":"0xc10e82920a5f4afb7b6111b9149e0d956fb2b8abdf4f131148daf866c006db11"}
+[2026-01-07 11:26:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:27:15] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x722c10c4ce20b19a659978b55e69191c230a15da77af2d16dfaf3b5d3ad26320","blockNumber":9995941,"contractAddress":null,"cumulativeGasUsed":"20973591","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000000","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0xc10e82920a5f4afb7b6111b9149e0d956fb2b8abdf4f131148daf866c006db11","index":164,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 11:27:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:28:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:29:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:30:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:31:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:32:40] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:33:13] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 11:34:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:34:11] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 11:34:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:34:11] INFO: Loading configuration...
+[2026-01-07 11:34:11] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 11:34:11] INFO: Initializing database connection...
+[2026-01-07 11:34:11] INFO: Database connected successfully
+[2026-01-07 11:34:11] INFO: Running database migrations...
+[2026-01-07 11:34:11] INFO: Database migrations completed
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 11:34:11] INFO: [L1-LISTENER] Starting...
+[2026-01-07 11:34:11] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 11:34:11] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 11:34:11] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 11:34:11] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 11:34:11] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 11:34:11] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 11:34:11] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 11:34:11] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 11:34:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:34:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:34:11] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 11:34:11] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 11:34:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:35:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:36:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:37:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:38:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:39:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 11:39:22] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 11:39:33] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:39:33] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 11:39:33] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:39:33] INFO: Loading configuration...
+[2026-01-07 11:39:33] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 11:39:33] INFO: Initializing database connection...
+[2026-01-07 11:39:33] INFO: Database connected successfully
+[2026-01-07 11:39:33] INFO: Running database migrations...
+[2026-01-07 11:39:33] INFO: Database migrations completed
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 11:39:33] INFO: [L1-LISTENER] Starting...
+[2026-01-07 11:39:33] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 11:39:33] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 11:39:33] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 11:39:33] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 11:39:33] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 11:39:33] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 11:39:33] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 11:39:33] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":20}
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 11:39:33] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 11:39:33] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:39:33] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 11:39:33] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 11:39:33] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 11:39:53] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 11:39:54] INFO: [BATCH #1] Transaction sent {"hash":"0xbfb652c138a614d845e069b5a732cc4c2d8e321e8e41e5daf983fc1df802a5e2"}
+[2026-01-07 11:40:03] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x7e3b5143da6b7305f7d0a493a244552077a125ec8c252442aab04f824e930b13","blockNumber":9995994,"contractAddress":null,"cumulativeGasUsed":"12429865","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000010","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0xbfb652c138a614d845e069b5a732cc4c2d8e321e8e41e5daf983fc1df802a5e2","index":119,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 11:40:13] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 11:40:14] INFO: [BATCH #1] Transaction sent {"hash":"0x584cd25fb6bd5609a4497b7bac93ae92997bee419926037af3cfa57d76bea818"}
+[2026-01-07 11:40:27] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0xc3b676aa7790b4b139513670ae0731f6b104338cd4e5f3a7edfce7cbeb2fa0ea","blockNumber":9995996,"contractAddress":null,"cumulativeGasUsed":"14488590","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000010","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"25090","hash":"0x584cd25fb6bd5609a4497b7bac93ae92997bee419926037af3cfa57d76bea818","index":58,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 11:40:32] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 12:01:04] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:01:04] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 12:01:04] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:01:04] INFO: Loading configuration...
+[2026-01-07 12:01:04] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 12:01:04] INFO: Initializing database connection...
+[2026-01-07 12:01:04] INFO: Database connected successfully
+[2026-01-07 12:01:04] INFO: Running database migrations...
+[2026-01-07 12:01:04] INFO: Database migrations completed
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 12:01:04] INFO: [L1-LISTENER] Starting...
+[2026-01-07 12:01:04] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 12:01:04] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 12:01:04] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 12:01:04] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 12:01:04] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 12:01:04] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 12:01:04] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 12:01:04] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":20}
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 12:01:04] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:01:04] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:01:04] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 12:01:04] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 12:01:04] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:01:24] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 12:01:25] INFO: [BATCH #1] Transaction sent {"hash":"0xeef21d16514f90bd91f750a7f802d570977e56e32dd4b4f204235d76e7032dfe"}
+[2026-01-07 12:01:44] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 12:01:45] INFO: [BATCH #1] Transaction sent {"hash":"0x558364b3bf2d1a8a15cec30708d024eb30bb15d5387b5ea839e1d8c9ddfbc1aa"}
+[2026-01-07 12:02:03] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0xdc8f3b7169a948f4e39e0ed24270aac460aedd6ccc14181534c3f7eb2cd4d835","blockNumber":9996088,"contractAddress":null,"cumulativeGasUsed":"26682326","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000009","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"35248","hash":"0x558364b3bf2d1a8a15cec30708d024eb30bb15d5387b5ea839e1d8c9ddfbc1aa","index":208,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 12:02:03] ERROR: Failed to submit batch {"error":{}}
+[2026-01-07 12:02:04] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:02:04] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 12:02:05] INFO: [BATCH #1] Transaction sent {"hash":"0x2590113ba2b31a538f8c98b9d839b7275179ffe9861f62ae3e5a2126ea901240"}
+[2026-01-07 12:02:13] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x03e782ca02c4481f2f9f5c421124843cf482f5029f9911cb951f0775ab86a116","blockNumber":9996089,"contractAddress":null,"cumulativeGasUsed":"11117822","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000009","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"35248","hash":"0x2590113ba2b31a538f8c98b9d839b7275179ffe9861f62ae3e5a2126ea901240","index":75,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 12:02:19] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 12:02:35] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:02:35] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 12:02:35] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:02:35] INFO: Loading configuration...
+[2026-01-07 12:02:35] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 12:02:35] INFO: Initializing database connection...
+[2026-01-07 12:02:35] INFO: Database connected successfully
+[2026-01-07 12:02:35] INFO: Running database migrations...
+[2026-01-07 12:02:35] INFO: Database migrations completed
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 12:02:35] INFO: [L1-LISTENER] Starting...
+[2026-01-07 12:02:35] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 12:02:35] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 12:02:35] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 12:02:35] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 12:02:35] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 12:02:35] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 12:02:35] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 12:02:35] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":20}
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 12:02:35] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:02:35] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:02:35] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 12:02:35] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 12:02:35] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:02:55] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 12:02:57] INFO: [BATCH #1] Transaction sent {"hash":"0xb7185a1d2f453afe1ef46f556ac9a9c197104f099b2ba16be076b094226f5654"}
+[2026-01-07 12:03:01] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0xb2031ac9cdf582426af8f2965fd4ef0b3e00aa636698d0790439410dec430111","blockNumber":9996091,"contractAddress":null,"cumulativeGasUsed":"23678284","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000009","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"35248","hash":"0xb7185a1d2f453afe1ef46f556ac9a9c197104f099b2ba16be076b094226f5654","index":164,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 12:03:15] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 12:03:16] INFO: [BATCH #1] Transaction sent {"hash":"0x93a8a00170821da23571c5dbe65b13e42461803e737676e410bd777bdd5c83cf"}
+[2026-01-07 12:03:25] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0xd469f01653a15f89d8f74971cd47047f58ca49d95874748a2b8abb3d1b6e80cd","blockNumber":9996093,"contractAddress":null,"cumulativeGasUsed":"5488302","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000010","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"35248","hash":"0x93a8a00170821da23571c5dbe65b13e42461803e737676e410bd777bdd5c83cf","index":52,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 12:03:28] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 12:06:13] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:06:13] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 12:06:13] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:06:13] INFO: Loading configuration...
+[2026-01-07 12:06:13] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 12:06:13] INFO: Initializing database connection...
+[2026-01-07 12:06:13] INFO: Database connected successfully
+[2026-01-07 12:06:13] INFO: Running database migrations...
+[2026-01-07 12:06:13] INFO: Database migrations completed
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 12:06:13] INFO: [L1-LISTENER] Starting...
+[2026-01-07 12:06:13] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 12:06:13] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 12:06:13] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 12:06:13] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 12:06:13] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 12:06:13] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 12:06:13] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 12:06:13] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 12:06:13] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 12:06:13] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:06:13] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 12:06:13] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 12:06:13] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 12:07:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:08:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:09:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:10:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:11:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:12:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:13:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:14:13] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 12:14:33] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 12:14:34] INFO: [BATCH #1] Transaction sent {"hash":"0xa1e1ade3ea99828b7df6a4e3e764a19197a78ea2f18a1715ca31d1e2ff21e659"}
+[2026-01-07 12:14:39] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0xdf1965c6bc7ac2ec4b9dbc3336d0728b8f566e52487e62b1cea54680e40958b5","blockNumber":9996143,"contractAddress":null,"cumulativeGasUsed":"8248329","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1000008","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"35248","hash":"0xa1e1ade3ea99828b7df6a4e3e764a19197a78ea2f18a1715ca31d1e2ff21e659","index":63,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 12:14:44] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 13:03:10] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:03:10] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 13:03:10] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:03:10] INFO: Loading configuration...
+[2026-01-07 13:03:10] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 13:03:10] INFO: Initializing database connection...
+[2026-01-07 13:03:10] INFO: Database connected successfully
+[2026-01-07 13:03:10] INFO: Running database migrations...
+[2026-01-07 13:03:10] INFO: Database migrations completed
+[2026-01-07 13:03:10] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:03:10] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 13:03:10] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:03:10] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 13:03:10] INFO: [L1-LISTENER] Starting...
+[2026-01-07 13:03:10] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 13:03:10] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 13:03:10] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 13:03:10] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 13:03:10] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 13:03:10] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 13:03:10] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 13:03:10] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 13:03:10] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 13:03:11] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 13:03:11] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 13:03:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:03:11] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 13:03:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:03:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:03:11] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 13:03:11] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 13:03:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:04:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:05:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:06:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:07:11] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:07:40] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 13:08:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:08:11] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 13:08:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:08:11] INFO: Loading configuration...
+[2026-01-07 13:08:11] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 13:08:11] INFO: Initializing database connection...
+[2026-01-07 13:08:11] INFO: Database connected successfully
+[2026-01-07 13:08:11] INFO: Running database migrations...
+[2026-01-07 13:08:11] INFO: Database migrations completed
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 13:08:11] INFO: [L1-LISTENER] Starting...
+[2026-01-07 13:08:11] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 13:08:11] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 13:08:11] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 13:08:11] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 13:08:11] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 13:08:11] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 13:08:11] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 13:08:11] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":5}
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 13:08:11] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:08:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:08:11] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 13:08:11] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 13:08:11] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:08:16] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 13:08:17] INFO: [BATCH #1] Transaction sent {"hash":"0x157092fabd315c75a340ed3d128bd8beb0ae26b4adebd7b41e2a883c2f1e3173"}
+[2026-01-07 13:08:21] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 13:08:22] INFO: [BATCH #1] Transaction sent {"hash":"0xf1e504d1eeef531da3a8b2233de4da5ab90d9b014f5555dfbaf5b5a3d44ac199"}
+[2026-01-07 13:08:26] ERROR: Failed to submit batch {"error":{"code":"CALL_EXCEPTION","action":"sendTransaction","data":null,"reason":null,"invocation":null,"revert":null,"transaction":{"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","data":""},"receipt":{"_type":"TransactionReceipt","blockHash":"0x6e0f07ff4364239d1531a2c8d937c40eb9d58f903f831d7865ae0f1e43b3e0ed","blockNumber":9996377,"contractAddress":null,"cumulativeGasUsed":"13138829","from":"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3","gasPrice":"1050004","blobGasUsed":null,"blobGasPrice":null,"gasUsed":"35248","hash":"0x157092fabd315c75a340ed3d128bd8beb0ae26b4adebd7b41e2a883c2f1e3173","index":67,"logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":0,"to":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35"},"shortMessage":"transaction execution reverted"}}
+[2026-01-07 13:08:26] INFO: [BATCH #1] Preparing batch 1-100
+[2026-01-07 13:08:27] INFO: [BATCH #1] Transaction sent {"hash":"0x5a2b7eb2bf4dc45d0e5a6e4225eb5aa350a737a92067815dacf6fd8f51249dc1"}
+[2026-01-07 13:08:29] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 13:11:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:11:12] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 13:11:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:11:12] INFO: Loading configuration...
+[2026-01-07 13:11:12] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 13:11:12] INFO: Initializing database connection...
+[2026-01-07 13:11:12] INFO: Database connected successfully
+[2026-01-07 13:11:12] INFO: Running database migrations...
+[2026-01-07 13:11:12] INFO: Database migrations completed
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 13:11:12] INFO: [L1-LISTENER] Starting...
+[2026-01-07 13:11:12] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 13:11:12] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 13:11:12] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 13:11:12] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 13:11:12] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 13:11:12] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 13:11:12] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 13:11:12] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 13:11:12] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:11:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:11:12] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 13:11:12] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 13:11:12] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:12:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:13:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:14:12] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:15:01] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 13:15:31] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:15:31] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 13:15:31] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:15:31] INFO: Loading configuration...
+[2026-01-07 13:15:31] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 13:15:31] INFO: Initializing database connection...
+[2026-01-07 13:15:31] INFO: Database connected successfully
+[2026-01-07 13:15:31] INFO: Running database migrations...
+[2026-01-07 13:15:31] INFO: Database migrations completed
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 13:15:31] INFO: [L1-LISTENER] Starting...
+[2026-01-07 13:15:31] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 13:15:31] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 13:15:31] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 13:15:31] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 13:15:31] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 13:15:31] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 13:15:31] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 13:15:31] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 13:15:31] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:15:31] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:15:31] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 13:15:31] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 13:15:31] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:16:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:17:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:18:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:19:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:20:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:21:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:22:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:23:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:23:52] INFO: [BATCH #300] Preparing batch for block 300
+[2026-01-07 13:23:52] INFO: [BATCH #300] Transaction sent {"hash":"0x44f6ada1c28fe32f7b1df2f3c17a25e5ad4bd611b8cffbaaca2452dc24371b20"}
+[2026-01-07 13:24:18] ERROR: Failed to submit batch {"error":"Do not know how to serialize a BigInt"}
+[2026-01-07 13:24:31] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 13:25:08] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 13:36:52] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:36:52] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 13:36:52] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:36:52] INFO: Loading configuration...
+[2026-01-07 13:36:52] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 13:36:52] INFO: Initializing database connection...
+[2026-01-07 13:36:52] INFO: Database connected successfully
+[2026-01-07 13:36:52] INFO: Running database migrations...
+[2026-01-07 13:36:52] INFO: Database migrations completed
+[2026-01-07 13:36:52] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:36:52] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 13:36:52] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:36:52] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 13:36:52] INFO: [L1-LISTENER] Starting...
+[2026-01-07 13:36:52] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 13:36:52] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 13:36:52] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 13:36:53] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 13:36:53] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 13:36:53] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 13:36:53] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 13:36:53] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 13:36:53] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 13:36:53] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 13:36:53] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 13:36:53] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:36:53] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 13:36:53] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:36:53] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:36:53] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 13:36:53] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 13:36:53] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:36:54] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 13:37:27] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:37:27] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 13:37:27] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:37:27] INFO: Loading configuration...
+[2026-01-07 13:37:27] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 13:37:27] INFO: Initializing database connection...
+[2026-01-07 13:37:27] INFO: Database connected successfully
+[2026-01-07 13:37:27] INFO: Running database migrations...
+[2026-01-07 13:37:27] INFO: Database migrations completed
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 13:37:27] INFO: [L1-LISTENER] Starting...
+[2026-01-07 13:37:27] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 13:37:27] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 13:37:27] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 13:37:27] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 13:37:27] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 13:37:27] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 13:37:27] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 13:37:27] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":10}
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 13:37:27] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:37:27] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:37:27] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 13:37:27] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 13:37:27] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:37:37] INFO: [BATCH #400] Preparing batch for block 400
+[2026-01-07 13:37:38] INFO: [BATCH #400] Transaction sent {"hash":"0x8932f8df48022d6fdcf634bf61b311f9c47a7728e7608228796c4515870b04cc"}
+[2026-01-07 13:37:47] INFO: [BATCH #400] Preparing batch for block 400
+[2026-01-07 13:37:48] INFO: [BATCH #400] Transaction sent {"hash":"0x022d803a805fa64e177d3c94cb611f3bca4a6515a870f5b7b09fd473e0206516"}
+[2026-01-07 13:37:51] ERROR: Failed to submit batch {"error":"Do not know how to serialize a BigInt"}
+[2026-01-07 13:37:54] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 13:51:01] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:51:01] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 13:51:01] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:51:01] INFO: Loading configuration...
+[2026-01-07 13:51:01] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 13:51:01] INFO: Initializing database connection...
+[2026-01-07 13:51:01] INFO: Database connected successfully
+[2026-01-07 13:51:01] INFO: Running database migrations...
+[2026-01-07 13:51:01] INFO: Database migrations completed
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 13:51:01] INFO: [L1-LISTENER] Starting...
+[2026-01-07 13:51:01] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 13:51:01] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 13:51:01] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 13:51:01] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 13:51:01] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 13:51:01] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 13:51:01] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 13:51:01] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":10}
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 13:51:01] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 13:51:01] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:51:01] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 13:51:01] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 13:51:01] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 13:51:11] INFO: [BATCH #500] Preparing batch for block 500
+[2026-01-07 13:51:12] INFO: [BATCH #500] Transaction sent {"hash":"0x370c9b3fe0b623df5a2bdb3f98d0f5cefc732b6c6927ce9bf1bbc439a3001c8d"}
+[2026-01-07 13:51:21] INFO: [BATCH #500] Preparing batch for block 500
+[2026-01-07 13:51:22] INFO: [BATCH #500] Transaction sent {"hash":"0x979d6b5ac9a39377b5c09fa2768437465682b59d6f50ac88fa283efd8a7818bf"}
+[2026-01-07 13:51:31] INFO: [BATCH #500] Preparing batch for block 500
+[2026-01-07 13:51:32] INFO: [BATCH #500] Transaction sent {"hash":"0x7b76848b716d03fcf50717977ae07187a48a788f91cbf7f61924f368cfd55796"}
+[2026-01-07 13:51:37] ERROR: Failed to submit batch {"error":"transaction execution reverted (action=\"sendTransaction\", data=null, reason=null, invocation=null, revert=null, transaction={ \"data\": \"\", \"from\": \"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3\", \"to\": \"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35\" }, receipt={ \"_type\": \"TransactionReceipt\", \"blobGasPrice\": null, \"blobGasUsed\": null, \"blockHash\": \"0x0d9b6b7e8038470651bc9045b1e6af6aff54458e908b43e1bc29ded37e08bba7\", \"blockNumber\": 9996563, \"contractAddress\": null, \"cumulativeGasUsed\": \"21209435\", \"from\": \"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3\", \"gasPrice\": \"1000011\", \"gasUsed\": \"35260\", \"hash\": \"0x979d6b5ac9a39377b5c09fa2768437465682b59d6f50ac88fa283efd8a7818bf\", \"index\": 100, \"logs\": [  ], \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\", \"root\": null, \"status\": 0, \"to\": \"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35\" }, code=CALL_EXCEPTION, version=6.16.0)","code":"CALL_EXCEPTION"}
+[2026-01-07 13:51:37] ERROR: Failed to submit batch {"error":"transaction execution reverted (action=\"sendTransaction\", data=null, reason=null, invocation=null, revert=null, transaction={ \"data\": \"\", \"from\": \"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3\", \"to\": \"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35\" }, receipt={ \"_type\": \"TransactionReceipt\", \"blobGasPrice\": null, \"blobGasUsed\": null, \"blockHash\": \"0x0d9b6b7e8038470651bc9045b1e6af6aff54458e908b43e1bc29ded37e08bba7\", \"blockNumber\": 9996563, \"contractAddress\": null, \"cumulativeGasUsed\": \"22100236\", \"from\": \"0x050bF90cc79D7a4acA382B233002303Fb7baA5a3\", \"gasPrice\": \"1000011\", \"gasUsed\": \"35260\", \"hash\": \"0x7b76848b716d03fcf50717977ae07187a48a788f91cbf7f61924f368cfd55796\", \"index\": 111, \"logs\": [  ], \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\", \"root\": null, \"status\": 0, \"to\": \"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35\" }, code=CALL_EXCEPTION, version=6.16.0)","code":"CALL_EXCEPTION"}
+[2026-01-07 13:51:37] INFO: [BATCH #5] Submitted successfully {"l1TxHash":"0x370c9b3fe0b623df5a2bdb3f98d0f5cefc732b6c6927ce9bf1bbc439a3001c8d","gasUsed":"173498","l2Block":"500"}
+[2026-01-07 13:51:41] INFO: [BATCH #600] Preparing batch for block 600
+[2026-01-07 13:51:53] INFO: [BATCH #700] Preparing batch for block 700
+[2026-01-07 13:51:53] INFO: [BATCH #600] Transaction sent {"hash":"0xe43c9c292fe6cb41f0c03a9aed7b4098d227108314b32cd0c3d46693bca4298f"}
+[2026-01-07 13:51:53] INFO: [BATCH #6] Submitted successfully {"l1TxHash":"0xe43c9c292fe6cb41f0c03a9aed7b4098d227108314b32cd0c3d46693bca4298f","gasUsed":"173498","l2Block":"600"}
+[2026-01-07 13:51:56] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 14:12:15] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:12:15] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 14:12:15] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:12:15] INFO: Loading configuration...
+[2026-01-07 14:12:15] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 14:12:15] INFO: Initializing database connection...
+[2026-01-07 14:12:15] INFO: Database connected successfully
+[2026-01-07 14:12:15] INFO: Running database migrations...
+[2026-01-07 14:12:15] INFO: Database migrations completed
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 14:12:15] INFO: [L1-LISTENER] Starting...
+[2026-01-07 14:12:15] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 14:12:15] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 14:12:15] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 14:12:15] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 14:12:15] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 14:12:15] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 14:12:15] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 14:12:15] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":10}
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 14:12:15] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:12:15] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:12:15] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 14:12:15] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 14:12:15] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:12:26] INFO: [BATCH #800] Preparing batch for block 800
+[2026-01-07 14:12:26] INFO: [BATCH #800] Transaction sent {"hash":"0x7bf0b889ca7c74c29892c70e5ce7786f17eb10953b442c5a17776025849a5e82"}
+[2026-01-07 14:12:35] INFO: [BATCH-SUBMITTER] Submission already in progress, skipping...
+[2026-01-07 14:12:45] INFO: [BATCH-SUBMITTER] Submission already in progress, skipping...
+[2026-01-07 14:12:55] INFO: [BATCH-SUBMITTER] Submission already in progress, skipping...
+[2026-01-07 14:13:05] INFO: [BATCH-SUBMITTER] Submission already in progress, skipping...
+[2026-01-07 14:13:15] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:13:15] INFO: [BATCH-SUBMITTER] Submission already in progress, skipping...
+[2026-01-07 14:13:25] INFO: [BATCH-SUBMITTER] Submission already in progress, skipping...
+[2026-01-07 14:13:29] INFO: [BATCH #8] Submitted successfully {"l1TxHash":"0x7bf0b889ca7c74c29892c70e5ce7786f17eb10953b442c5a17776025849a5e82","gasUsed":"173486","l2Block":"800"}
+[2026-01-07 14:13:36] INFO: [BATCH #900] Preparing batch for block 900
+[2026-01-07 14:13:37] INFO: [BATCH #900] Transaction sent {"hash":"0x50c8fafc970b4cf85cb756bd744ddecf917352ec6970d5d0ad497dd7cc7e872d"}
+[2026-01-07 14:13:41] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 14:14:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:14:49] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 14:14:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:14:49] INFO: Loading configuration...
+[2026-01-07 14:14:49] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 14:14:49] INFO: Initializing database connection...
+[2026-01-07 14:14:49] INFO: Database connected successfully
+[2026-01-07 14:14:49] INFO: Running database migrations...
+[2026-01-07 14:14:49] INFO: Database migrations completed
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 14:14:49] INFO: [L1-LISTENER] Starting...
+[2026-01-07 14:14:49] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 14:14:49] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 14:14:49] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 14:14:49] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 14:14:49] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 14:14:49] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 14:14:49] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 14:14:49] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":10}
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 14:14:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:14:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:14:49] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 14:14:49] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 14:14:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:14:50] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-07 14:15:21] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:15:21] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-07 14:15:21] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:15:21] INFO: Loading configuration...
+[2026-01-07 14:15:21] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-07 14:15:21] INFO: Initializing database connection...
+[2026-01-07 14:15:21] INFO: Database connected successfully
+[2026-01-07 14:15:21] INFO: Running database migrations...
+[2026-01-07 14:15:21] INFO: Database migrations completed
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-07 14:15:21] INFO: [L1-LISTENER] Starting...
+[2026-01-07 14:15:21] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-07 14:15:21] INFO: [L2-PROCESSOR] Starting...
+[2026-01-07 14:15:21] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-07 14:15:21] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-07 14:15:21] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-07 14:15:21] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-07 14:15:21] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-07 14:15:21] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-07 14:15:21] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-07 14:15:21] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:15:21] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-07 14:15:21] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-07 14:15:21] INFO: ════════════════════════════════════════════════════════════
+[2026-01-07 14:16:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:17:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:18:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:19:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:20:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:21:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:22:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:23:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:23:42] INFO: [BATCH #1000] Preparing batch for block 1000
+[2026-01-07 14:23:43] INFO: [BATCH #1000] Transaction sent {"hash":"0x9e3ef1983f1419346fbec1d65fbabc55942c41eeda8031eb87b0d80996e15d7f"}
+[2026-01-07 14:23:52] INFO: [BATCH #10] Submitted successfully {"l1TxHash":"0x9e3ef1983f1419346fbec1d65fbabc55942c41eeda8031eb87b0d80996e15d7f","gasUsed":"173498","l2Block":"1000"}
+[2026-01-07 14:24:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:25:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:26:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:27:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:28:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:29:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:30:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:31:21] INFO: [SEQUENCER-MANAGER] Health check: All services running
+[2026-01-07 14:32:02] INFO: [BATCH #1100] Preparing batch for block 1100
+[2026-01-07 14:32:03] INFO: [BATCH #1100] Transaction sent {"hash":"0x04b35ebf0e332c32114921f90174f11e9dfde8a450e89f1d86b9fca773d49ae6"}
+[2026-01-07 14:32:06] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-13 11:48:14] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 11:48:14] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 11:48:14] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 11:48:14] INFO: Loading configuration...
+[2026-01-13 11:48:14] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 11:48:14] INFO: Initializing database connection...
+[2026-01-13 11:48:14] INFO: Database connected successfully
+[2026-01-13 11:48:14] INFO: Running database migrations...
+[2026-01-13 11:48:14] ERROR: Database query failed {"text":"CREATE INDEX IF NOT EXISTS idx_batches_submitted ON batches(submitted);","error":{"length":99,"name":"error","severity":"ERROR","code":"42703","file":"indexcmds.c","line":"1831","routine":"ComputeIndexAttrs"}}
+[2026-01-13 12:08:04] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:08:04] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 12:08:04] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:08:04] INFO: Loading configuration...
+[2026-01-13 12:08:04] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 12:08:04] INFO: Initializing database connection...
+[2026-01-13 12:08:04] INFO: Database connected successfully
+[2026-01-13 12:08:04] INFO: Running database migrations...
+[2026-01-13 12:08:04] INFO: Database migrations completed
+[2026-01-13 12:08:04] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:08:04] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 12:08:04] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:08:04] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 12:08:04] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 12:08:04] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 12:08:04] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 12:08:04] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 12:09:29] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:09:29] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 12:09:29] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:09:29] INFO: Loading configuration...
+[2026-01-13 12:09:29] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 12:09:29] INFO: Initializing database connection...
+[2026-01-13 12:09:29] INFO: Database connected successfully
+[2026-01-13 12:09:29] INFO: Running database migrations...
+[2026-01-13 12:09:29] INFO: Database migrations completed
+[2026-01-13 12:09:29] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:09:29] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 12:09:29] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:09:29] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 12:09:29] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 12:09:29] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 12:09:29] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 12:09:29] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 12:22:35] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:22:35] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 12:22:35] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:22:35] INFO: Loading configuration...
+[2026-01-13 12:22:35] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 12:22:35] INFO: Initializing database connection...
+[2026-01-13 12:22:35] INFO: Database connected successfully
+[2026-01-13 12:22:35] INFO: Running database migrations...
+[2026-01-13 12:22:35] INFO: Database migrations completed
+[2026-01-13 12:22:35] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:22:35] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 12:22:35] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:22:35] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 12:22:35] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 12:22:35] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 12:22:35] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 12:22:35] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 12:34:43] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:34:43] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 12:34:43] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:34:43] INFO: Loading configuration...
+[2026-01-13 12:34:43] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 12:34:43] INFO: Initializing database connection...
+[2026-01-13 12:34:43] INFO: Database connected successfully
+[2026-01-13 12:34:43] INFO: Running database migrations...
+[2026-01-13 12:34:43] INFO: Database migrations completed
+[2026-01-13 12:34:43] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:34:43] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 12:34:43] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:34:43] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 12:34:43] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 12:34:43] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 12:34:43] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 12:34:43] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 12:37:38] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:37:38] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 12:37:38] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 12:37:38] INFO: Loading configuration...
+[2026-01-13 12:37:38] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 12:37:38] INFO: Initializing database connection...
+[2026-01-13 12:37:38] INFO: Database connected successfully
+[2026-01-13 12:37:38] INFO: Running database migrations...
+[2026-01-13 12:37:38] INFO: Database migrations completed
+[2026-01-13 12:37:38] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:37:38] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 12:37:38] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 12:37:38] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 12:37:38] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 12:37:38] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 12:37:38] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 12:37:38] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:00:02] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:00:02] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:00:02] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:00:02] INFO: Loading configuration...
+[2026-01-13 13:00:02] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:00:02] INFO: Initializing database connection...
+[2026-01-13 13:00:02] INFO: Database connected successfully
+[2026-01-13 13:00:02] INFO: Running database migrations...
+[2026-01-13 13:00:02] INFO: Database migrations completed
+[2026-01-13 13:03:03] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:03:03] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:03:03] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:03:03] INFO: Loading configuration...
+[2026-01-13 13:03:03] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:03:03] INFO: Initializing database connection...
+[2026-01-13 13:03:03] INFO: Database connected successfully
+[2026-01-13 13:03:03] INFO: Running database migrations...
+[2026-01-13 13:03:03] INFO: Database migrations completed
+[2026-01-13 13:03:31] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:03:31] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:03:31] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:03:31] INFO: Loading configuration...
+[2026-01-13 13:03:31] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:03:31] INFO: Initializing database connection...
+[2026-01-13 13:03:31] INFO: Database connected successfully
+[2026-01-13 13:03:31] INFO: Running database migrations...
+[2026-01-13 13:03:31] INFO: Database migrations completed
+[2026-01-13 13:03:31] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:03:31] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:03:31] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:03:31] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:03:31] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:03:31] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 13:03:31] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:03:31] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:08:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:08:20] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:08:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:08:20] INFO: Loading configuration...
+[2026-01-13 13:08:20] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:08:20] INFO: Initializing database connection...
+[2026-01-13 13:08:20] INFO: Database connected successfully
+[2026-01-13 13:08:20] INFO: Running database migrations...
+[2026-01-13 13:08:20] INFO: Database migrations completed
+[2026-01-13 13:08:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:08:20] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:08:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:08:20] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:08:20] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:08:20] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 13:08:20] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:08:20] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:15:14] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:15:14] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:15:14] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:15:14] INFO: Loading configuration...
+[2026-01-13 13:15:14] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:15:14] INFO: Initializing database connection...
+[2026-01-13 13:15:14] INFO: Database connected successfully
+[2026-01-13 13:15:14] INFO: Running database migrations...
+[2026-01-13 13:15:14] INFO: Database migrations completed
+[2026-01-13 13:15:14] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:15:14] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:15:14] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:15:14] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:15:14] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:15:14] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 13:15:14] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:15:14] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:15:34] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:15:34] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:15:34] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:15:34] INFO: Loading configuration...
+[2026-01-13 13:15:34] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:15:34] INFO: Initializing database connection...
+[2026-01-13 13:15:34] INFO: Database connected successfully
+[2026-01-13 13:15:34] INFO: Running database migrations...
+[2026-01-13 13:15:34] INFO: Database migrations completed
+[2026-01-13 13:15:34] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:15:34] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:15:34] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:15:34] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:15:34] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:15:34] INFO: Engine API client initialized {"endpoint":"http://localhost:8552"}
+[2026-01-13 13:15:34] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:15:34] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:21:06] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:21:06] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:21:06] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:21:06] INFO: Loading configuration...
+[2026-01-13 13:21:06] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:21:06] INFO: Initializing database connection...
+[2026-01-13 13:21:06] INFO: Database connected successfully
+[2026-01-13 13:21:06] INFO: Running database migrations...
+[2026-01-13 13:21:06] INFO: Database migrations completed
+[2026-01-13 13:21:06] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:21:06] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:21:06] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:21:06] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:21:06] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:21:06] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:21:06] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:21:06] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:22:37] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:22:37] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:22:37] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:22:37] INFO: Loading configuration...
+[2026-01-13 13:22:37] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:22:37] INFO: Initializing database connection...
+[2026-01-13 13:22:37] INFO: Database connected successfully
+[2026-01-13 13:22:37] INFO: Running database migrations...
+[2026-01-13 13:22:37] INFO: Database migrations completed
+[2026-01-13 13:22:37] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:22:37] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:22:37] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:22:37] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:22:37] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:22:37] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:22:37] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:22:37] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:25:44] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:25:44] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:25:44] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:25:44] INFO: Loading configuration...
+[2026-01-13 13:25:44] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:25:44] INFO: Initializing database connection...
+[2026-01-13 13:25:44] INFO: Database connected successfully
+[2026-01-13 13:25:44] INFO: Running database migrations...
+[2026-01-13 13:25:44] INFO: Database migrations completed
+[2026-01-13 13:25:44] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:25:44] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:25:44] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:25:44] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:25:44] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:25:44] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:25:44] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:25:44] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:29:48] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:29:48] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:29:48] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:29:48] INFO: Loading configuration...
+[2026-01-13 13:29:48] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:29:48] INFO: Initializing database connection...
+[2026-01-13 13:29:48] INFO: Database connected successfully
+[2026-01-13 13:29:48] INFO: Running database migrations...
+[2026-01-13 13:29:48] INFO: Database migrations completed
+[2026-01-13 13:29:48] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:29:48] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:29:48] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:29:48] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:29:48] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:29:48] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:29:48] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:29:48] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:33:41] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:33:41] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:33:41] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:33:41] INFO: Loading configuration...
+[2026-01-13 13:33:41] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:33:41] INFO: Initializing database connection...
+[2026-01-13 13:33:41] INFO: Database connected successfully
+[2026-01-13 13:33:41] INFO: Running database migrations...
+[2026-01-13 13:33:41] INFO: Database migrations completed
+[2026-01-13 13:33:41] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:33:41] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:33:41] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:33:41] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:33:41] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:33:41] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:33:41] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:33:41] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:36:15] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:36:15] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:36:15] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:36:15] INFO: Loading configuration...
+[2026-01-13 13:36:15] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:36:15] INFO: Initializing database connection...
+[2026-01-13 13:36:15] INFO: Database connected successfully
+[2026-01-13 13:36:15] INFO: Running database migrations...
+[2026-01-13 13:36:15] INFO: Database migrations completed
+[2026-01-13 13:36:15] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:36:15] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:36:15] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:36:15] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:36:15] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:36:15] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:36:15] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:36:15] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:36:36] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:36:36] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:36:36] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:36:36] INFO: Loading configuration...
+[2026-01-13 13:36:36] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:36:36] INFO: Initializing database connection...
+[2026-01-13 13:36:36] INFO: Database connected successfully
+[2026-01-13 13:36:36] INFO: Running database migrations...
+[2026-01-13 13:36:36] INFO: Database migrations completed
+[2026-01-13 13:36:36] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:36:36] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:36:36] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:36:36] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:36:36] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:36:36] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:36:36] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:36:36] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:43:16] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:43:16] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:43:16] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:43:16] INFO: Loading configuration...
+[2026-01-13 13:43:16] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:43:16] INFO: Initializing database connection...
+[2026-01-13 13:43:16] INFO: Database connected successfully
+[2026-01-13 13:43:16] INFO: Running database migrations...
+[2026-01-13 13:43:16] INFO: Database migrations completed
+[2026-01-13 13:43:16] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:43:16] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:43:16] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:43:16] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:43:16] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:43:16] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:43:16] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:50:02] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:50:02] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:50:02] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:50:02] INFO: Loading configuration...
+[2026-01-13 13:50:02] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:50:02] INFO: Initializing database connection...
+[2026-01-13 13:50:02] INFO: Database connected successfully
+[2026-01-13 13:50:02] INFO: Running database migrations...
+[2026-01-13 13:50:02] INFO: Database migrations completed
+[2026-01-13 13:50:02] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:50:02] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:50:02] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:50:02] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:50:02] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:50:02] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:50:02] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:50:02] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:50:45] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:50:45] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:50:45] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:50:45] INFO: Loading configuration...
+[2026-01-13 13:50:45] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:50:45] INFO: Initializing database connection...
+[2026-01-13 13:50:45] INFO: Database connected successfully
+[2026-01-13 13:50:45] INFO: Running database migrations...
+[2026-01-13 13:50:45] INFO: Database migrations completed
+[2026-01-13 13:50:45] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:50:45] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:50:45] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:50:45] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:50:45] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:50:45] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:50:45] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:50:45] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:53:27] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:53:27] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:53:27] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:53:27] INFO: Loading configuration...
+[2026-01-13 13:53:27] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:53:27] INFO: Initializing database connection...
+[2026-01-13 13:53:27] INFO: Database connected successfully
+[2026-01-13 13:53:27] INFO: Running database migrations...
+[2026-01-13 13:53:27] INFO: Database migrations completed
+[2026-01-13 13:53:27] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:53:27] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:53:27] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:53:27] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:53:27] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:53:27] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:53:27] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:53:27] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-13 13:54:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:54:49] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-13 13:54:49] INFO: ════════════════════════════════════════════════════════════
+[2026-01-13 13:54:49] INFO: Loading configuration...
+[2026-01-13 13:54:49] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-13 13:54:49] INFO: Initializing database connection...
+[2026-01-13 13:54:49] INFO: Database connected successfully
+[2026-01-13 13:54:49] INFO: Running database migrations...
+[2026-01-13 13:54:49] INFO: Database migrations completed
+[2026-01-13 13:54:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:54:49] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-13 13:54:49] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-13 13:54:49] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-13 13:54:49] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-13 13:54:49] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-13 13:54:49] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-13 13:54:49] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 08:46:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 08:46:30] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 08:46:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 08:46:30] INFO: Loading configuration...
+[2026-01-19 08:46:30] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 08:46:30] INFO: Initializing database connection...
+[2026-01-19 08:46:30] INFO: Database connected successfully
+[2026-01-19 08:46:30] INFO: Running database migrations...
+[2026-01-19 08:46:30] INFO: Database migrations completed
+[2026-01-19 08:46:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 08:46:30] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 08:46:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 08:46:30] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 08:46:30] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 08:46:30] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 08:46:30] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 08:46:30] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 08:54:37] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 08:54:37] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 08:54:37] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 08:54:37] INFO: Loading configuration...
+[2026-01-19 08:54:37] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 08:54:37] INFO: Initializing database connection...
+[2026-01-19 08:54:37] INFO: Database connected successfully
+[2026-01-19 08:54:37] INFO: Running database migrations...
+[2026-01-19 08:54:37] INFO: Database migrations completed
+[2026-01-19 08:54:37] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 08:54:37] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 08:54:37] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 08:54:37] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 08:54:37] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 08:54:37] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 08:54:37] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 08:54:37] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 08:59:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 08:59:20] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 08:59:20] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 08:59:20] INFO: Loading configuration...
+[2026-01-19 08:59:20] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 08:59:20] INFO: Initializing database connection...
+[2026-01-19 08:59:20] INFO: Database connected successfully
+[2026-01-19 08:59:20] INFO: Running database migrations...
+[2026-01-19 08:59:20] INFO: Database migrations completed
+[2026-01-19 08:59:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 08:59:20] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 08:59:20] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 08:59:20] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 08:59:20] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 08:59:20] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 08:59:20] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 08:59:20] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 09:28:06] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:28:06] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 09:28:06] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:28:06] INFO: Loading configuration...
+[2026-01-19 09:28:06] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 09:28:06] INFO: Initializing database connection...
+[2026-01-19 09:28:06] INFO: Database connected successfully
+[2026-01-19 09:28:06] INFO: Running database migrations...
+[2026-01-19 09:28:06] INFO: Database migrations completed
+[2026-01-19 09:28:06] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:28:06] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 09:28:06] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:28:06] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 09:28:06] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 09:28:06] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 09:28:06] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 09:28:06] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 09:35:50] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:35:50] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 09:35:50] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:35:50] INFO: Loading configuration...
+[2026-01-19 09:35:50] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 09:35:50] INFO: Initializing database connection...
+[2026-01-19 09:35:51] INFO: Database connected successfully
+[2026-01-19 09:35:51] INFO: Running database migrations...
+[2026-01-19 09:35:51] INFO: Database migrations completed
+[2026-01-19 09:35:51] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:35:51] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 09:35:51] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:35:51] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 09:35:51] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 09:35:51] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 09:35:51] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 09:35:51] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 09:37:51] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:37:51] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 09:37:51] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:37:51] INFO: Loading configuration...
+[2026-01-19 09:37:51] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 09:37:51] INFO: Initializing database connection...
+[2026-01-19 09:37:51] INFO: Database connected successfully
+[2026-01-19 09:37:51] INFO: Running database migrations...
+[2026-01-19 09:37:51] INFO: Database migrations completed
+[2026-01-19 09:37:51] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:37:51] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 09:37:51] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:37:51] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 09:37:51] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 09:37:51] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 09:37:51] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 09:37:51] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 09:38:19] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:38:19] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 09:38:19] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:38:19] INFO: Loading configuration...
+[2026-01-19 09:38:19] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 09:38:19] INFO: Initializing database connection...
+[2026-01-19 09:38:19] INFO: Database connected successfully
+[2026-01-19 09:38:19] INFO: Running database migrations...
+[2026-01-19 09:38:19] INFO: Database migrations completed
+[2026-01-19 09:38:19] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:38:19] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 09:38:19] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:38:19] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 09:38:19] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 09:38:19] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 09:38:19] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 09:38:19] INFO: [BLOCK-BUILDER] Failed to start {"error":"Cannot connect to Engine API"}
+[2026-01-19 09:41:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:41:30] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 09:41:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:41:30] INFO: Loading configuration...
+[2026-01-19 09:41:30] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 09:41:30] INFO: Initializing database connection...
+[2026-01-19 09:41:30] INFO: Database connected successfully
+[2026-01-19 09:41:30] INFO: Running database migrations...
+[2026-01-19 09:41:30] INFO: Database migrations completed
+[2026-01-19 09:41:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:41:30] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 09:41:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:41:30] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 09:41:30] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 09:41:30] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 09:41:30] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 09:41:30] ERROR: Engine API ping failed {"error":{}}
+[2026-01-19 09:46:03] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:46:03] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 09:46:03] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:46:03] INFO: Loading configuration...
+[2026-01-19 09:46:03] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 09:46:03] INFO: Initializing database connection...
+[2026-01-19 09:46:03] INFO: Database connected successfully
+[2026-01-19 09:46:03] INFO: Running database migrations...
+[2026-01-19 09:46:03] INFO: Database migrations completed
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 09:46:03] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 09:46:03] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 09:46:03] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 09:46:03] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x8037647e..."}
+[2026-01-19 09:46:03] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 09:46:03] INFO: [L1-LISTENER] Starting...
+[2026-01-19 09:46:03] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 09:46:03] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 09:46:03] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 09:46:03] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 09:46:03] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 09:46:03] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 09:46:03] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 09:46:03] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:46:03] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:46:03] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 09:46:03] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 09:46:03] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:46:08] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 09:46:08] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 31db6b63591487c44ac9a412f05fe6143a7228b61413e8372bab65bc65990fba, got 9dcdc93a12caa015fa3b51394ca72047b69055e1b8a6d04f4e424cc8b39e898e","blockNumber":1}
+[2026-01-19 09:46:13] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 09:46:13] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 61d81398dfd8b270a34ca2c0ec5159c24b74f1be5be88e80929678b0db8968d7, got 63a56110c0d7dc2cf562a1399fdec5b1351021d629e774c2c9391a2bee790aed","blockNumber":1}
+[2026-01-19 09:46:15] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-19 09:53:57] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:53:57] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 09:53:57] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:53:57] INFO: Loading configuration...
+[2026-01-19 09:53:57] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 09:53:57] INFO: Initializing database connection...
+[2026-01-19 09:53:57] INFO: Database connected successfully
+[2026-01-19 09:53:57] INFO: Running database migrations...
+[2026-01-19 09:53:57] INFO: Database migrations completed
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 09:53:57] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 09:53:57] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 09:53:57] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 09:53:57] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x8037647e..."}
+[2026-01-19 09:53:57] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 09:53:57] INFO: [L1-LISTENER] Starting...
+[2026-01-19 09:53:57] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 09:53:57] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 09:53:57] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 09:53:57] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 09:53:57] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 09:53:57] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 09:53:57] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 09:53:57] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 09:53:57] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:53:57] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 09:53:57] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 09:53:57] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 09:54:02] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 09:54:02] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want e566af4214164b1640d0ef8cf41b998014e6c7dcce0eb5b3dea0ae075be10f6d, got 1381d012d58f3c110574a95492f9468634d5e58281dfa9b752ba373cc538a571","blockNumber":1}
+[2026-01-19 09:54:03] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-19 10:00:24] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:00:24] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 10:00:24] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:00:24] INFO: Loading configuration...
+[2026-01-19 10:00:24] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 10:00:24] INFO: Initializing database connection...
+[2026-01-19 10:00:24] INFO: Database connected successfully
+[2026-01-19 10:00:24] INFO: Running database migrations...
+[2026-01-19 10:00:24] INFO: Database migrations completed
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 10:00:24] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 10:00:24] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 10:00:24] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 10:00:24] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x8037647e..."}
+[2026-01-19 10:00:24] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 10:00:24] INFO: [L1-LISTENER] Starting...
+[2026-01-19 10:00:24] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 10:00:24] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 10:00:24] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 10:00:24] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 10:00:24] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 10:00:24] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 10:00:24] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 10:00:24] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:00:24] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:00:24] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 10:00:24] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 10:00:24] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:00:29] INFO: Building block {"blockNumber":1}
+[2026-01-19 10:00:29] INFO: Pending transactions {"count":0}
+[2026-01-19 10:00:29] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 10:00:29] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 7cc0802c37180a32ebfca3440baf1c7b7f3dee5d73580316722823d2f1ae9825, got 70dc65eb1c3a48cde194d533f450acfaf0aa2b4b80bc82f490cd9336d395fcb9","blockNumber":1}
+[2026-01-19 10:00:32] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-19 10:54:58] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:54:58] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 10:54:58] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:54:58] INFO: Loading configuration...
+[2026-01-19 10:54:58] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 10:54:58] INFO: Initializing database connection...
+[2026-01-19 10:54:58] INFO: Database connected successfully
+[2026-01-19 10:54:58] INFO: Running database migrations...
+[2026-01-19 10:54:58] INFO: Database migrations completed
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 10:54:58] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 10:54:58] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 10:54:58] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 10:54:58] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x8037647e..."}
+[2026-01-19 10:54:58] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 10:54:58] INFO: [L1-LISTENER] Starting...
+[2026-01-19 10:54:58] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 10:54:58] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 10:54:58] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 10:54:58] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 10:54:58] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 10:54:58] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 10:54:58] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 10:54:58] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 10:54:58] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:54:58] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 10:54:58] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 10:54:58] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 10:55:03] INFO: Building block {"blockNumber":1}
+[2026-01-19 10:55:03] ERROR: Failed to build block {"error":"Engine API error: {\"code\":-32603,\"message\":\"method handler crashed\"}","blockNumber":1}
+[2026-01-19 10:55:08] INFO: Building block {"blockNumber":1}
+[2026-01-19 10:55:08] ERROR: Failed to build block {"error":"Engine API error: {\"code\":-32603,\"message\":\"method handler crashed\"}","blockNumber":1}
+[2026-01-19 10:55:13] INFO: Building block {"blockNumber":1}
+[2026-01-19 10:55:13] ERROR: Failed to build block {"error":"Engine API error: {\"code\":-32603,\"message\":\"method handler crashed\"}","blockNumber":1}
+[2026-01-19 10:55:18] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-19 12:02:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:02:30] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 12:02:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:02:30] INFO: Loading configuration...
+[2026-01-19 12:02:30] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 12:02:30] INFO: Initializing database connection...
+[2026-01-19 12:02:30] INFO: Database connected successfully
+[2026-01-19 12:02:30] INFO: Running database migrations...
+[2026-01-19 12:02:30] INFO: Database migrations completed
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 12:02:30] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 12:02:30] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 12:02:30] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 12:02:30] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x6eddf0d6..."}
+[2026-01-19 12:02:30] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 12:02:30] INFO: [L1-LISTENER] Starting...
+[2026-01-19 12:02:30] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 12:02:30] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 12:02:30] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 12:02:30] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 12:02:30] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 12:02:30] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 12:02:30] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 12:02:30] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:02:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:02:30] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 12:02:30] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 12:02:30] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:02:35] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:02:35] INFO: Pending transactions {"count":0}
+[2026-01-19 12:02:35] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:02:35] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want f753ac463d0fdc1c96a35976726b91ea1e8aaff3efd87599f2d6331395a5da04, got 613c2e27110d10e2f324aa9d977d071c6f787fbb4214253b4f1fb9ce9caa63a1","blockNumber":1}
+[2026-01-19 12:02:39] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-19 12:22:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:22:40] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 12:22:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:22:40] INFO: Loading configuration...
+[2026-01-19 12:22:40] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 12:22:40] INFO: Initializing database connection...
+[2026-01-19 12:22:40] INFO: Database connected successfully
+[2026-01-19 12:22:40] INFO: Running database migrations...
+[2026-01-19 12:22:40] INFO: Database migrations completed
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 12:22:40] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 12:22:40] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 12:22:40] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 12:22:40] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x6eddf0d6..."}
+[2026-01-19 12:22:40] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 12:22:40] INFO: [L1-LISTENER] Starting...
+[2026-01-19 12:22:40] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 12:22:40] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 12:22:40] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 12:22:40] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 12:22:40] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 12:22:40] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 12:22:40] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 12:22:40] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:22:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:22:40] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 12:22:40] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 12:22:40] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:22:45] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:22:45] ERROR: Failed to build block {"error":"Engine API error: {\"code\":-32602,\"message\":\"Invalid parameters\",\"data\":{\"err\":\"forkChoiceUpdateV1 called post-shanghai\"}}","blockNumber":1}
+[2026-01-19 12:22:50] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:22:50] ERROR: Failed to build block {"error":"Engine API error: {\"code\":-32602,\"message\":\"Invalid parameters\",\"data\":{\"err\":\"forkChoiceUpdateV1 called post-shanghai\"}}","blockNumber":1}
+[2026-01-19 12:22:51] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-19 12:24:47] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:24:47] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 12:24:47] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:24:47] INFO: Loading configuration...
+[2026-01-19 12:24:47] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 12:24:47] INFO: Initializing database connection...
+[2026-01-19 12:24:47] INFO: Database connected successfully
+[2026-01-19 12:24:47] INFO: Running database migrations...
+[2026-01-19 12:24:48] INFO: Database migrations completed
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 12:24:48] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 12:24:48] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 12:24:48] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 12:24:48] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x6eddf0d6..."}
+[2026-01-19 12:24:48] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 12:24:48] INFO: [L1-LISTENER] Starting...
+[2026-01-19 12:24:48] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 12:24:48] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 12:24:48] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 12:24:48] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 12:24:48] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 12:24:48] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 12:24:48] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 12:24:48] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:24:48] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:24:48] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 12:24:48] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 12:24:48] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:24:53] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:24:53] INFO: Pending transactions {"count":0}
+[2026-01-19 12:24:53] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:24:53] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 8bbd5f062012808e4ad3df69cb34138a65e3c993f397ed70e5971e5e038c9454, got 2dd27258a7cfc9dc29ecb4fc5125a4d5e818779f9f1425d24914e1de9cb59ea3","blockNumber":1}
+[2026-01-19 12:24:54] INFO: Received SIGINT, starting graceful shutdown...
+[2026-01-19 12:48:16] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:48:16] INFO: 🚀 L2 SEQUENCER SERVICE
+[2026-01-19 12:48:16] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:48:16] INFO: Loading configuration...
+[2026-01-19 12:48:16] INFO: Configuration loaded successfully {"l1ChainId":11155111,"l2ChainId":420377,"batchSize":100}
+[2026-01-19 12:48:16] INFO: Initializing database connection...
+[2026-01-19 12:48:16] INFO: Database connected successfully
+[2026-01-19 12:48:16] INFO: Running database migrations...
+[2026-01-19 12:48:16] INFO: Database migrations completed
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] 🚀 STARTING SEQUENCER SERVICE
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] Starting Block Builder...
+[2026-01-19 12:48:16] INFO: [BLOCK-BUILDER] Starting...
+[2026-01-19 12:48:16] INFO: Engine API client initialized {"endpoint":"http://127.0.0.1:8552"}
+[2026-01-19 12:48:16] INFO: [HEALTH-CHECK] Server started on port 3000
+[2026-01-19 12:48:16] INFO: Initialized from chain {"blockNumber":0,"blockHash":"0x6eddf0d6..."}
+[2026-01-19 12:48:16] INFO: [BLOCK-BUILDER] Started successfully {"blockInterval":"5000ms","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] Starting L1 Listener...
+[2026-01-19 12:48:16] INFO: [L1-LISTENER] Starting...
+[2026-01-19 12:48:16] INFO: [L1-LISTENER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","chainId":11155111}
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] Starting L2 Processor...
+[2026-01-19 12:48:16] INFO: [L2-PROCESSOR] Starting...
+[2026-01-19 12:48:16] INFO: [L2-PROCESSOR] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","sequencer":"0x050bf90cc79d7a4aca382b233002303fb7baa5a3"}
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] Starting L2 Withdrawal Listener...
+[2026-01-19 12:48:16] INFO: [L2-WITHDRAWAL-LISTENER] Starting...
+[2026-01-19 12:48:16] INFO: [L2-WITHDRAWAL-LISTENER] Started successfully {"bridgeAddress":"0x13439C345Fe109770d29429b3BdFE927b18EeF3B","chainId":420377}
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] Starting Batch Submitter...
+[2026-01-19 12:48:16] INFO: [BATCH-SUBMITTER] Starting...
+[2026-01-19 12:48:16] INFO: [BATCH-SUBMITTER] Started successfully {"diamondAddress":"0x2BD57c3Ca216F0D38B18BCFD14595F12DfB13C35","batchSize":100,"batchInterval":500}
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] ✅ ALL SERVICES STARTED SUCCESSFULLY
+[2026-01-19 12:48:16] INFO: [SEQUENCER-MANAGER] ═══════════════════════════════════════
+[2026-01-19 12:48:16] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:48:16] INFO: ✅ SEQUENCER SERVICE RUNNING
+[2026-01-19 12:48:16] INFO: 📡 Health check: http://localhost:3000/health
+[2026-01-19 12:48:16] INFO: ════════════════════════════════════════════════════════════
+[2026-01-19 12:48:21] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:21] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:21] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:21] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 2a1d18d037c41b53336b047b5f6575a69e63e20f48aa9239813044f7852122b6, got 77783b9381d0441e608e0dfe391f90699ea4756a5762b70caf0bb54db0480f82","blockNumber":1}
+[2026-01-19 12:48:26] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:26] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:26] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:26] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 005e7c33403207eabdc02bb02938cc6bea5a6159d91b3cac1a807402bb32242f, got f38de3cca9c337b85c63ad7192aaad42e86c45651e3e790495ecdb175767624e","blockNumber":1}
+[2026-01-19 12:48:31] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:31] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:31] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:31] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want be93a2356b5d9f2b59f4f30633c3c26652ab0b933e6fafd8792677dd99822ff9, got 9af0f25d1f35a70956b36ddd2a97116253680d58d9ab9dc33c1baac1ee90240e","blockNumber":1}
+[2026-01-19 12:48:36] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:36] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:36] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:36] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 9f8c63757d4eff417f91ed00df1d978964bda08f74bdab7085713929da1a5bc2, got 2a696c20a063eb71ab3faa1b94259e3165dd8d86cb82e0b52fe8137b3178904e","blockNumber":1}
+[2026-01-19 12:48:41] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:41] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:41] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:41] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want de20a4c54110c07fa4e67aab9317aa3a897fb76a0e3fa87cda6399acea0d2d6d, got c57c4f13f4be5d1401b79864322c34b72693a4f1cf033c87c908724e1642c65d","blockNumber":1}
+[2026-01-19 12:48:46] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:46] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:46] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:46] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want c78e475f2c59576a4110e2be92190782b3f5f21196684452ada13d8059c264e0, got 65a89c38c17b57232f14118f0b15d56a2006aa41eeb46e8d7fecbd3c3ee051c8","blockNumber":1}
+[2026-01-19 12:48:51] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:51] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:51] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:51] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 8b14b5b73fa6119e889242ec0eff23cade9b66cb0efc23bca66223492a14dc26, got 5b57c2e502cf2bd9216248b74c9c385ccf0c2aabf1594b288e21b1db20d161b9","blockNumber":1}
+[2026-01-19 12:48:56] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:48:56] INFO: Pending transactions {"count":0}
+[2026-01-19 12:48:56] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:48:56] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 68e4e5b8d5e551927964a0801a1db0ced767766de2f6df212efd52399e41c67a, got 094d4017dbfbf35dea8ad4bff76364e6ec6eb73ba812389aa6596137f0503b99","blockNumber":1}
+[2026-01-19 12:49:01] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:49:01] INFO: Pending transactions {"count":0}
+[2026-01-19 12:49:01] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:49:01] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 2d170ba96bd48586b6869844a6a1881c28bb35781dc044839cd179b5e122cb25, got 4d63cc972b234e160f78f73a9d44e6a01bf04f2cac282c1af0cd8bf71c7a0207","blockNumber":1}
+[2026-01-19 12:49:06] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:49:06] INFO: Pending transactions {"count":0}
+[2026-01-19 12:49:06] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:49:06] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want f6eed2420e178cf5e6ab0e06782d38cbb18f4811f687f51ec5d928343c54ec82, got 2cd32b2cff9018689f08dae74fb3f751868cfe132214ba2ff00e3209c9d0fc22","blockNumber":1}
+[2026-01-19 12:49:11] INFO: Building block {"blockNumber":1}
+[2026-01-19 12:49:11] INFO: Pending transactions {"count":0}
+[2026-01-19 12:49:11] INFO: Payload submitted {"status":"INVALID","blockNumber":"0x1"}
+[2026-01-19 12:49:11] ERROR: Failed to build block {"error":"Payload rejected: INVALID - blockhash mismatch, want 9f05ec61c1395a1b2699adc9a4d20c12c42b8d38a90a88c03b0ab1255c73db2b, got ef8841ba00b4a77d07221b5c88b4a71024de523551d9b05ae78f16ed0ad7be91","blockNumber":1}
+[2026-01-19 12:49:13] INFO: Received SIGINT, starting graceful shutdown...

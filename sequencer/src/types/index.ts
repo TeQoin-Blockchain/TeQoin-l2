@@ -16,6 +16,8 @@ export interface Config {
     rpcUrl: string;
     wsUrl: string;
     chainId: number;
+    engineUrl: string;        // NEW: Engine API endpoint
+    jwtSecretPath: string;
     contracts: {
       teqToken: string;
       bridge: string;
