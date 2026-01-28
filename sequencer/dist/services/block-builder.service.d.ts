@@ -18,18 +18,7 @@ export declare class BlockBuilderService {
      * Initialize state from current chain
      */
     private initializeState;
-    /**
-     * Build and submit a new block
-     */
     private buildAndSubmitBlock;
-    /**
-     * Get pending transactions from mempool
-     */
-    private getPendingTransactions;
-    /**
-     * Build execution payload
-     */
-    private buildPayload;
     /**
      * Stop block building
      */

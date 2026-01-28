@@ -42,11 +42,13 @@ class L1ListenerService {
     /**
      * Handle deposit event from L1
      */
-    async handleDeposit(depositId, token, recipient, amount, event) {
+    async handleDeposit(depositId, token, from, to, amount, nonce, event) {
         try {
             (0, logger_1.logService)('L1-LISTENER', `Detected deposit: ${depositId.slice(0, 10)}...`, {
                 token,
-                recipient,
+                from,
+                to,
+                nonce: nonce.toString(),
                 amount: amount.toString(),
                 blockNumber: event.blockNumber,
             });
@@ -54,18 +56,19 @@ class L1ListenerService {
             await (0, models_1.saveDeposit)({
                 depositId,
                 tokenAddress: token,
-                recipient,
+                recipient: to,
                 amount: amount.toString(),
-                l1BlockNumber: BigInt(event.blockNumber),
+                l1BlockNumber: event.blockNumber ? BigInt(event.blockNumber) : 0n,
                 l1TxHash: event.transactionHash || '',
                 processed: false,
             });
             (0, logger_1.logService)('L1-LISTENER', `Deposit saved: ${depositId.slice(0, 10)}...`);
         }
         catch (error) {
+            const errorMesssage = error instanceof Error ? error.message : 'Unknown message';
             logger_1.logger.error('Failed to handle deposit event', {
                 depositId,
-                error,
+                errorMessage: errorMesssage
             });
         }
     }
@@ -95,7 +98,7 @@ exports.L1ListenerService = L1ListenerService;
 // BRIDGE FACET ABI (Deposited event)
 // ═══════════════════════════════════════════════════════
 const BRIDGE_FACET_ABI = [
-    'event Deposited(bytes32 indexed depositId, address indexed token, address indexed recipient, uint256 amount)',
+    'event Deposited(bytes32 indexed depositId, address indexed token, address indexed from, address to, uint256 amount, uint256 nonce)'
 ];
 exports.default = L1ListenerService;
 //# sourceMappingURL=l1-listener.service.js.map

@@ -23,7 +23,16 @@ export interface PayloadAttributes {
     timestamp: string;
     prevRandao: string;
     suggestedFeeRecipient: string;
-    withdrawals?: any[];
+    withdrawals?: Withdrawal[];
+}
+export interface Withdrawal {
+    index: string;
+    validatorIndex: string;
+    address: string;
+    amount: string;
+}
+export interface ExecutionPayloadV2 extends ExecutionPayload {
+    withdrawals: Withdrawal[];
 }
 export declare class EngineAPIClient {
     private jwt;
@@ -36,6 +45,23 @@ export declare class EngineAPIClient {
     /**
      * engine_newPayloadV1 - Submit new execution payload
      */
+    forkchoiceUpdatedV2(forkchoiceState: ForkchoiceState, payloadAttributes?: PayloadAttributes): Promise<{
+        payloadStatus: {
+            status: 'VALID' | 'INVALID' | 'SYNCING';
+            latestValidHash: string | null;
+            validationError: string | null;
+        };
+        payloadId: string | null;
+    }>;
+    getPayloadV2(payloadId: string): Promise<{
+        executionPayload: ExecutionPayloadV2;
+        blockValue: string;
+    }>;
+    newPayloadV2(payload: ExecutionPayloadV2): Promise<{
+        status: 'VALID' | 'INVALID' | 'SYNCING' | 'ACCEPTED';
+        latestValidHash: string | null;
+        validationError: string | null;
+    }>;
     newPayloadV1(payload: ExecutionPayload): Promise<{
         status: 'VALID' | 'INVALID' | 'SYNCING' | 'ACCEPTED';
         latestValidHash: string | null;

@@ -53,14 +53,18 @@ export class L1ListenerService {
   private async handleDeposit(
     depositId: string,
     token: string,
-    recipient: string,
+    from: string,
+    to: string,
     amount: bigint,
+    nonce: bigint,
     event: ethers.Log
   ): Promise<void> {
     try {
       logService('L1-LISTENER', `Detected deposit: ${depositId.slice(0, 10)}...`, {
         token,
-        recipient,
+        from,
+        to,
+        nonce: nonce.toString(),
         amount: amount.toString(),
         blockNumber: event.blockNumber,
       });
@@ -69,9 +73,9 @@ export class L1ListenerService {
       await saveDeposit({
         depositId,
         tokenAddress: token,
-        recipient,
+        recipient: to,
         amount: amount.toString(),
-        l1BlockNumber: BigInt(event.blockNumber),
+        l1BlockNumber: event.blockNumber ? BigInt(event.blockNumber) : 0n,
         l1TxHash: event.transactionHash || '',
         processed: false,
       });
@@ -79,9 +83,10 @@ export class L1ListenerService {
       logService('L1-LISTENER', `Deposit saved: ${depositId.slice(0, 10)}...`);
       
     } catch (error) {
+      const errorMesssage = error instanceof Error ? error.message : 'Unknown message';
       logger.error('Failed to handle deposit event', {
         depositId,
-        error,
+        errorMessage : errorMesssage
       });
     }
   }
@@ -117,7 +122,7 @@ export class L1ListenerService {
 // ═══════════════════════════════════════════════════════
 
 const BRIDGE_FACET_ABI = [
-  'event Deposited(bytes32 indexed depositId, address indexed token, address indexed recipient, uint256 amount)',
+'event Deposited(bytes32 indexed depositId, address indexed token, address indexed from, address to, uint256 amount, uint256 nonce)'
 ];
 
 export default L1ListenerService;

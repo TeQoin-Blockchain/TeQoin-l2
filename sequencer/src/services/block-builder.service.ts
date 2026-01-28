@@ -11,7 +11,7 @@ import { EngineAPIClient, ExecutionPayload, ForkchoiceState } from '../engine/en
 export class BlockBuilderService {
   private l2Provider: ethers.JsonRpcProvider | null = null;
   private engineAPI: EngineAPIClient | null = null;
-  private isRunning: boolean = false;
+  private isRunning: boolean = false; 
   private intervalId: NodeJS.Timeout | null = null;
   private blockInterval: number = 5000; // 5 seconds per block
   
@@ -91,134 +91,93 @@ export class BlockBuilderService {
     }
   }
   
-  /**
-   * Build and submit a new block
-   */
   private async buildAndSubmitBlock(): Promise<void> {
     if (!this.isRunning) return;
-    
+
     try {
       const blockNumber = this.lastBlockNumber + 1;
       const timestamp = Math.floor(Date.now() / 1000);
-      
+
       logger.info('Building block', { blockNumber, timestamp });
-      
-      // Get pending transactions from mempool
-      const pendingTxs = await this.getPendingTransactions();
-      
-      logger.info('Pending transactions', { count: pendingTxs.length });
-      
-      
-      // Build execution payload
-      const payload = await this.buildPayload(
-        blockNumber,
-        timestamp,
-        pendingTxs
-      );
-      
-      // Submit payload to execution layer
-      const payloadResult = await this.engineAPI!.newPayloadV1(payload);
-      
-      if (payloadResult.status !== 'VALID' && payloadResult.status !== 'ACCEPTED') {
-        throw new Error(`Payload rejected: ${payloadResult.status} - ${payloadResult.validationError}`);
-      }
-      
-      // Update fork choice
+
+      //Geth Build Block
+      const payloadAttributes = {
+        timestamp: ethers.toBeHex(timestamp),
+        prevRandao: ethers.keccak256(ethers.toUtf8Bytes(`random-${timestamp}`)),
+        suggestedFeeRecipient: this.sequencerAddress,
+        withdrawals: [],
+      };
+
       const forkchoiceState: ForkchoiceState = {
+        headBlockHash: this.lastBlockHash,
+        safeBlockHash: this.lastBlockHash,
+        finalizedBlockHash: this.lastBlockHash,
+      };
+
+      logger.debug('Requesting Geth to build block');
+    
+      const buildResult = await this.engineAPI!.forkchoiceUpdatedV2(
+        forkchoiceState,
+        payloadAttributes
+      );
+
+      if (!buildResult.payloadId) {
+        throw new Error('No payload ID returned');
+      }
+
+      logger.debug('Build request accepted', { payloadId: buildResult.payloadId });
+
+    // WAIT FOR GETH TO BUILD IT 
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+    // GET THE PAYLOAD GETH BUILT
+      const payloadResponse = await this.engineAPI!.getPayloadV2(buildResult.payloadId);
+      const payload = payloadResponse.executionPayload;
+
+      logger.debug('Payload retrieved', {
+        blockNumber: payload.blockNumber,
+        blockHash: payload.blockHash.slice(0, 10) + '...',
+        transactions: payload.transactions.length,
+      });
+
+    //  SUBMIT THE PAYLOAD
+      const payloadResult = await this.engineAPI!.newPayloadV2(payload);
+
+      if (payloadResult.status !== 'VALID' && payloadResult.status !== 'ACCEPTED') {
+        throw new Error(`Payload rejected: ${payloadResult.status}`);
+      }
+
+      logger.debug('Payload accepted', { status: payloadResult.status });
+
+    // UPDATE FORKCHOICE TO FINALIZ
+      const finalForkchoice: ForkchoiceState = {
         headBlockHash: payload.blockHash,
         safeBlockHash: payload.blockHash,
         finalizedBlockHash: this.lastBlockHash,
       };
-      
-      const forkchoiceResult = await this.engineAPI!.forkchoiceUpdatedV1(forkchoiceState);
-      
-      if (forkchoiceResult.payloadStatus.status !== 'VALID') {
-        throw new Error(`Forkchoice update failed: ${forkchoiceResult.payloadStatus.status}`);
+
+      const finalResult = await this.engineAPI!.forkchoiceUpdatedV2(finalForkchoice);
+
+      if (finalResult.payloadStatus.status !== 'VALID') {
+        throw new Error(`Forkchoice failed: ${finalResult.payloadStatus.status}`);
       }
-      
-      // Update state
+
+    // UPDATE OUR STATE
       this.lastBlockHash = payload.blockHash;
-      this.lastBlockNumber = blockNumber;
-      
+      this.lastBlockNumber = parseInt(payload.blockNumber, 16);
+
       logger.info('Block built successfully', {
-        blockNumber,
+        blockNumber: this.lastBlockNumber,
         blockHash: payload.blockHash.slice(0, 10) + '...',
-        transactions: pendingTxs.length,
-        gasUsed: payload.gasUsed,
+        transactions: payload.transactions.length,
       });
-      
+
     } catch (error: any) {
       logger.error('Failed to build block', {
         error: error.message,
         blockNumber: this.lastBlockNumber + 1,
       });
     }
-  }
-  
-  /**
-   * Get pending transactions from mempool
-   */
-  private async getPendingTransactions(): Promise<string[]> {
-    try {
-      // Get pending transactions
-      const pendingBlock = await this.l2Provider!.send('eth_getBlockByNumber', [
-        'pending',
-        true,
-      ]);
-      
-      if (pendingBlock && pendingBlock.transactions) {
-        // Return raw transaction data
-        return pendingBlock.transactions.map((tx: any) => {
-          // Convert transaction to RLP-encoded format
-          // For MVP, we'll return the transaction hash
-          // In production, you need to RLP-encode the full transaction
-          return tx.hash || '0x';
-        });
-      }
-      
-      return [];
-    } catch (error) {
-      logger.debug('No pending transactions');
-      return [];
-    }
-  }
-  
-  /**
-   * Build execution payload
-   */
-  private async buildPayload(
-    blockNumber: number,
-    timestamp: number,
-    transactions: string[]
-  ): Promise<ExecutionPayload> {
-    
-    // Calculate block hash (simplified - in production use proper RLP encoding)
-    const blockData = ethers.concat([
-      ethers.toBeHex(blockNumber, 32),
-      ethers.toBeHex(timestamp, 32),
-      this.lastBlockHash,
-    ]);
-    const blockHash = ethers.keccak256(blockData);
-    
-    // Build payload
-    const payload: ExecutionPayload = {
-      parentHash: this.lastBlockHash,
-      feeRecipient: this.sequencerAddress,
-      stateRoot: ethers.ZeroHash, 
-      receiptsRoot: ethers.ZeroHash, // Calculated by execution layer
-      logsBloom: '0x' + '0'.repeat(512), // Empty logs bloom
-      prevRandao: ethers.keccak256(ethers.toUtf8Bytes(`random-${timestamp}`)),
-      blockNumber: '0x' + blockNumber.toString(16),
-      gasLimit: '0x1c9c380', // 30M gas
-      gasUsed: '0x0', // Will be calculated
-      timestamp: '0x' + timestamp.toString(16),
-      extraData: ethers.hexlify(ethers.toUtf8Bytes('TeQoin L2')),
-      baseFeePerGas: '0x7', // 7 wei
-      blockHash: blockHash,
-      transactions: transactions,
-    };
-    
-    return payload;
   }
   
   /**
