@@ -92,6 +92,26 @@ class EngineAPIClient {
     /**
      * engine_newPayloadV1 - Submit new execution payload
      */
+    async forkchoiceUpdatedV2(forkchoiceState, payloadAttributes) {
+        logger_1.logger.debug('engine_forkchoiceUpdatedV2', {
+            head: forkchoiceState.headBlockHash.slice(0, 10) + '...',
+        });
+        const params = payloadAttributes
+            ? [forkchoiceState, payloadAttributes]
+            : [forkchoiceState];
+        return this.request('engine_forkchoiceUpdatedV2', params);
+    }
+    async getPayloadV2(payloadId) {
+        logger_1.logger.debug('engine_getPayloadV2', { payloadId });
+        return this.request('engine_getPayloadV2', [payloadId]);
+    }
+    async newPayloadV2(payload) {
+        logger_1.logger.debug('engine_newPayloadV2', {
+            blockNumber: payload.blockNumber,
+            withdrawals: payload.withdrawals.length,
+        });
+        return this.request('engine_newPayloadV2', [payload]);
+    }
     async newPayloadV1(payload) {
         logger_1.logger.debug('Sending newPayloadV1', {
             blockNumber: payload.blockNumber,

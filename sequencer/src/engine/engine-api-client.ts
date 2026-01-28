@@ -34,7 +34,16 @@ export interface PayloadAttributes {
   timestamp: string;
   prevRandao: string;
   suggestedFeeRecipient: string;
-  withdrawals?: any[];
+  withdrawals?: Withdrawal[];
+}
+export interface Withdrawal {
+  index: string;
+  validatorIndex: string;
+  address: string;
+  amount: string;
+}
+export interface ExecutionPayloadV2 extends ExecutionPayload {
+  withdrawals: Withdrawal[];
 }
 
 export class EngineAPIClient {
@@ -109,6 +118,50 @@ export class EngineAPIClient {
   /**
    * engine_newPayloadV1 - Submit new execution payload
    */
+    async forkchoiceUpdatedV2(
+    forkchoiceState: ForkchoiceState,
+    payloadAttributes?: PayloadAttributes
+  ): Promise<{
+    payloadStatus: {
+      status: 'VALID' | 'INVALID' | 'SYNCING';
+      latestValidHash: string | null;
+      validationError: string | null;
+    };
+    payloadId: string | null;
+  }> {
+    logger.debug('engine_forkchoiceUpdatedV2', {
+      head: forkchoiceState.headBlockHash.slice(0, 10) + '...',
+    });
+
+    const params = payloadAttributes
+      ? [forkchoiceState, payloadAttributes]
+      : [forkchoiceState];
+
+    return this.request('engine_forkchoiceUpdatedV2', params);
+  }
+
+  async getPayloadV2(payloadId: string): Promise<{
+    executionPayload: ExecutionPayloadV2;
+    blockValue : string;
+  }> {
+    logger.debug('engine_getPayloadV2', { payloadId });
+    return this.request('engine_getPayloadV2', [payloadId]);
+  }
+
+  async newPayloadV2(
+    payload: ExecutionPayloadV2
+  ): Promise<{
+    status: 'VALID' | 'INVALID' | 'SYNCING' | 'ACCEPTED';
+    latestValidHash: string | null;
+    validationError: string | null;
+  }> {
+    logger.debug('engine_newPayloadV2', {
+      blockNumber: payload.blockNumber,
+      withdrawals: payload.withdrawals.length,
+    });
+
+    return this.request('engine_newPayloadV2', [payload]);
+  }
   async newPayloadV1(payload: ExecutionPayload): Promise<{
     status: 'VALID' | 'INVALID' | 'SYNCING' | 'ACCEPTED';
     latestValidHash: string | null;
