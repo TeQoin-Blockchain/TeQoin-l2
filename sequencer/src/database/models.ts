@@ -97,15 +97,40 @@ export async function getPendingWithdrawals(limit: number = 100): Promise<Withdr
   return result.rows.map(rowToWithdrawal);
 }
 
-export async function markWithdrawalQueued(withdrawalId: string): Promise<void> {
+
+export async function getWithdrawalsInRange(
+  startBlock: bigint,
+  endBlock: bigint
+): Promise<Withdrawal[]> {
   const text = `
-    UPDATE withdrawals 
-    SET queued = TRUE, queued_at = NOW() 
-    WHERE withdrawal_id = $1
+    SELECT * FROM withdrawals
+    WHERE l2_block_number >= $1 
+      AND l2_block_number <= $2
+      AND queued = false
+    ORDER BY l2_block_number ASC
   `;
   
-  await query(text, [withdrawalId]);
-  logger.debug('Withdrawal marked as queued', { withdrawalId });
+  const result = await query(text, [startBlock.toString(), endBlock.toString()]);
+  return result.rows.map(rowToWithdrawal);
+}
+
+export async function markWithdrawalQueued(withdrawalId: string, l1TxHash: string): Promise<void> {
+  const text = l1TxHash? `
+    UPDATE withdrawals 
+    SET queued = TRUE, queued_at = NOW(), l1_tx_hash = $2
+    WHERE withdrawal_id = $1
+  `
+  : `
+      UPDATE withdrawals 
+      SET queued = TRUE, queued_at = NOW()
+      WHERE withdrawal_id = $1
+    `;
+
+  
+  const values = l1TxHash ? [withdrawalId, l1TxHash] : [withdrawalId];
+  
+  await query(text, values);
+  logger.debug('Withdrawal marked as queued', { withdrawalId, l1TxHash });
 }
 
 // ═══════════════════════════════════════════════════════
@@ -260,6 +285,7 @@ export default {
   getDepositById,
   saveWithdrawal,
   getPendingWithdrawals,
+  getWithdrawalsInRange,
   markWithdrawalQueued,
   saveBatch,
   markBatchSubmitted,
