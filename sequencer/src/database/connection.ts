@@ -119,6 +119,7 @@ async function runMigrations(): Promise<void> {
       queued BOOLEAN DEFAULT FALSE,
       finalized BOOLEAN DEFAULT FALSE,
       l1_tx_hash VARCHAR(66),
+      finalization_tx_hash VARCHAR(66),
       created_at TIMESTAMP DEFAULT NOW(),
       queued_at TIMESTAMP,
       finalized_at TIMESTAMP
@@ -155,6 +156,7 @@ async function runMigrations(): Promise<void> {
     `CREATE INDEX IF NOT EXISTS idx_deposits_processed ON deposits(processed);`,
     `CREATE INDEX IF NOT EXISTS idx_deposits_l1_block ON deposits(l1_block_number);`,
     `CREATE INDEX IF NOT EXISTS idx_withdrawals_queued ON withdrawals(queued);`,
+    `ALTER TABLE withdrawals ADD COLUMN IF NOT EXISTS finalization_tx_hash VARCHAR(66);`,
     `CREATE INDEX IF NOT EXISTS idx_withdrawals_l2_block ON withdrawals(l2_block_number);`,
     `CREATE INDEX IF NOT EXISTS idx_batches_submitted ON batches(submitted);`,
   ];

@@ -1,0 +1,371 @@
+{
+  "info": {
+    "name": "TeQoin L2 Indexer API",
+    "description": "Endpoints for block explorer and wallet integration.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Blocks",
+      "item": [
+        {
+          "name": "Get Latest Block",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/block/latest"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('success true', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Block By Number",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/block/{{blockNumber}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Block Transactions",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/block/{{blockNumber}}/transactions?limit=5"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Missing Block (404)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/block/999999999"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('404', function () { pm.response.to.have.status(404); });",
+                  "pm.test('success false', function () { pm.expect(pm.response.json().success).to.eql(false); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Transactions",
+      "item": [
+        {
+          "name": "Get Transaction By Hash",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/transaction/{{txHash}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Transaction Logs",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/transaction/{{txHash}}/logs"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Invalid Tx Hash (400)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/transaction/0x123"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('400', function () { pm.response.to.have.status(400); });",
+                  "pm.test('success false', function () { pm.expect(pm.response.json().success).to.eql(false); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Address",
+      "item": [
+        {
+          "name": "Get Address Transactions",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/address/{{address}}/transactions?limit=5&offset=0"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Address Count",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/address/{{address}}/count"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Invalid Address (400)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/address/0x123/transactions"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('400', function () { pm.response.to.have.status(400); });",
+                  "pm.test('success false', function () { pm.expect(pm.response.json().success).to.eql(false); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stats",
+      "item": [
+        {
+          "name": "Get Stats",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/stats"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Stats Health",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/stats/health"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bridge",
+      "item": [
+        {
+          "name": "Get Latest Bridge Activity",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/bridge/latest?limit=20"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('success true', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Latest L1 to L2",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/bridge/l1-to-l2/latest?limit=20"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('success true', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Latest L2 to L1",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/bridge/l2-to-l1/latest?limit=20"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('success true', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Bridge By ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/bridge/{{bridgeId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('success true', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Address Bridge History",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/address/{{address}}/bridge-history?limit=50"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('success true', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.teqoin.io"
+    },
+    {
+      "key": "blockNumber",
+      "value": "171525"
+    },
+    {
+      "key": "txHash",
+      "value": "0xa9f7a3339bf6003236d4566c48faf85b4836508ceff9d65f294942ba87e27afb"
+    },
+    {
+      "key": "address",
+      "value": "0x050bf90cc79d7a4aca382b233002303fb7baa5a3"
+    },
+    {
+      "key": "bridgeId",
+      "value": "0xd289f93deb6783694a1e795be4e903b83a7c0169d28c975cb8b2cfa71aa93a14"
+    }
+  ]
+}
