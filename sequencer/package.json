@@ -9,7 +9,10 @@
     "dev": "nodemon --exec ts-node src/index.ts",
     "clean": "rm -rf dist",
     "prestart": "npm run build",
-    "db.migrate": "ts-node ./node_modules/typeorm/cli.js migration:run -d src/data-source.ts"
+    "db.migrate": "ts-node ./node_modules/typeorm/cli.js migration:run -d src/data-source.ts",
+    "backfill:withdrawal-finalizations": "ts-node src/scripts/backfill-withdrawal-finalizations.ts",
+    "start:event-gateway": "node dist/event-gateway.js",
+    "dev:event-gateway": "nodemon --exec ts-node src/event-gateway.ts"
   },
   "author": "TeQoin Team",
   "license": "MIT",

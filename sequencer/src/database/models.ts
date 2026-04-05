@@ -60,6 +60,13 @@ export async function getDepositById(depositId: string): Promise<Deposit | null>
   return rowToDeposit(result.rows[0]);
 }
 
+export async function getLastDepositBlock(): Promise<bigint> {
+  const text = `SELECT COALESCE(MAX(l1_block_number), 0) AS max_block FROM deposits`;
+  const result = await query(text, []);
+  const value = result.rows[0]?.max_block ?? 0;
+  return BigInt(value);
+}
+
 // ═══════════════════════════════════════════════════════
 // WITHDRAWAL MODELS
 // ═══════════════════════════════════════════════════════
@@ -114,6 +121,19 @@ export async function getWithdrawalsInRange(
   return result.rows.map(rowToWithdrawal);
 }
 
+export async function getQueuedUnfinalizedWithdrawals(limit: number = 25): Promise<Withdrawal[]> {
+  const text = `
+    SELECT * FROM withdrawals
+    WHERE queued = TRUE
+      AND finalized = FALSE
+    ORDER BY queued_at ASC NULLS LAST, l2_block_number ASC
+    LIMIT $1
+  `;
+
+  const result = await query(text, [limit]);
+  return result.rows.map(rowToWithdrawal);
+}
+
 export async function markWithdrawalQueued(withdrawalId: string, l1TxHash: string): Promise<void> {
   const text = l1TxHash? `
     UPDATE withdrawals 
@@ -131,6 +151,19 @@ export async function markWithdrawalQueued(withdrawalId: string, l1TxHash: strin
   
   await query(text, values);
   logger.debug('Withdrawal marked as queued', { withdrawalId, l1TxHash });
+}
+
+export async function markWithdrawalFinalized(withdrawalId: string, finalizationTxHash?: string): Promise<void> {
+  const text = `
+    UPDATE withdrawals
+    SET finalized = TRUE,
+        finalized_at = NOW(),
+        finalization_tx_hash = COALESCE($2, finalization_tx_hash)
+    WHERE withdrawal_id = $1
+  `;
+
+  await query(text, [withdrawalId, finalizationTxHash ?? null]);
+  logger.debug('Withdrawal marked as finalized', { withdrawalId, finalizationTxHash });
 }
 
 // ═══════════════════════════════════════════════════════
@@ -272,6 +305,7 @@ function rowToWithdrawal(row: any): Withdrawal {
     queued: row.queued,
     finalized: row.finalized,
     l1TxHash: row.l1_tx_hash,
+    finalizationTxHash: row.finalization_tx_hash,
     createdAt: row.created_at,
     queuedAt: row.queued_at,
     finalizedAt: row.finalized_at,
@@ -283,10 +317,13 @@ export default {
   getPendingDeposits,
   markDepositProcessed,
   getDepositById,
+  getLastDepositBlock,
   saveWithdrawal,
   getPendingWithdrawals,
   getWithdrawalsInRange,
+  getQueuedUnfinalizedWithdrawals,
   markWithdrawalQueued,
+  markWithdrawalFinalized,
   saveBatch,
   markBatchSubmitted,
   getLastBatchNumber,

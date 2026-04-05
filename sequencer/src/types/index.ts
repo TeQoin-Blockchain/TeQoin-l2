@@ -105,6 +105,7 @@ export interface Withdrawal {
   queued: boolean;
   finalized: boolean;
   l1TxHash?: string;
+  finalizationTxHash?: string;
   createdAt?: Date;
   queuedAt?: Date;
   finalizedAt?: Date;
@@ -155,6 +156,7 @@ export interface ServiceStatus {
   l2Processor: ServiceState;
   l2WithdrawalListener: ServiceState;
   batchSubmitter: ServiceState;
+  withdrawalFinalizer: ServiceState;
 }
 
 export enum ServiceState {
@@ -189,6 +191,16 @@ export interface HealthCheckResponse {
   services: ServiceStatus;
   stats: SequencerStats;
   uptime: number;
+  relayer?: {
+    status: ServiceState;
+    pollIntervalMs: number;
+    challengePeriodSeconds: number;
+    lastRunAt: Date | null;
+    lastSuccessAt: Date | null;
+    lastErrorAt: Date | null;
+    lastErrorMessage: string | null;
+    inFlightCount: number;
+  };
 }
 
 // ───────────────────────────────────────────────────────

@@ -12,6 +12,22 @@ import { HealthCheckResponse } from './types';
 let sequencerManager: SequencerManagerService | null = null;
 let healthCheckServer: any = null;
 
+function formatUnknownError(error: unknown): Record<string, unknown> {
+  if (error instanceof Error) {
+    return {
+      name: error.name,
+      message: error.message,
+      stack: error.stack,
+    };
+  }
+
+  if (typeof error === 'object' && error !== null) {
+    return { error };
+  }
+
+  return { error: String(error) };
+}
+
 async function main() {
   try {
     logger.info('═'.repeat(60));
@@ -53,6 +69,8 @@ async function main() {
  */
 async function startHealthCheckServer(port: number): Promise<void> {
   const app = express();
+  const stringifyJson = (value: unknown) =>
+    JSON.stringify(value, (_key, current) => (typeof current === 'bigint' ? current.toString() : current));
   
   // Health check endpoint
   app.get('/health', async (req, res) => {
@@ -75,9 +93,13 @@ async function startHealthCheckServer(port: number): Promise<void> {
         services: serviceStatus,
         stats,
         uptime,
+        relayer: sequencerManager.getRelayerHealth(),
       };
       
-      res.status(isHealthy ? 200 : 503).json(response);
+      res
+        .status(isHealthy ? 200 : 503)
+        .type('application/json')
+        .send(stringifyJson(response));
       
     } catch (error) {
       logger.error('Health check failed', { error });
@@ -90,14 +112,16 @@ async function startHealthCheckServer(port: number): Promise<void> {
   
   // Root endpoint
   app.get('/', (req, res) => {
-    res.json({
+    res
+      .type('application/json')
+      .send(stringifyJson({
       service: 'L2 Sequencer Service',
       version: '1.0.0',
       status: 'running',
       endpoints: {
         health: '/health',
       },
-    });
+    }));
   });
   
   // Start server
@@ -127,7 +151,8 @@ async function shutdown(signal: string): Promise<void> {
     await closeDatabase();
     
     logger.info('Graceful shutdown completed');
-    process.exit(0);
+    const isFailureSignal = signal === 'uncaughtException' || signal === 'unhandledRejection';
+    process.exit(isFailureSignal ? 1 : 0);
     
   } catch (error) {
     logger.error('Error during shutdown', { error });
@@ -141,12 +166,12 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 
 // Handle uncaught errors
 process.on('uncaughtException', (error) => {
-  logger.error('Uncaught exception', { error });
+  logger.error('Uncaught exception', formatUnknownError(error));
   shutdown('uncaughtException');
 });
 
 process.on('unhandledRejection', (reason) => {
-  logger.error('Unhandled rejection', { reason });
+  logger.error('Unhandled rejection', formatUnknownError(reason));
   shutdown('unhandledRejection');
 });
 

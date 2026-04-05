@@ -5,6 +5,7 @@ import { L1ListenerService } from './l1-listener.service';
 import { L2ProcessorService } from './l2-processor.service';
 import { L2WithdrawalListenerService } from './l2-withdrawal-listener.service';
 import { BatchSubmitterService } from './batch-submitter.service';
+import { WithdrawalFinalizerService } from './withdrawal-finalizer.service';
 import BlockBuilderService from './block-builder.service';
 
 
@@ -19,12 +20,14 @@ export class SequencerManagerService {
   private l2Processor: L2ProcessorService;
   private l2WithdrawalListener: L2WithdrawalListenerService;
   private batchSubmitter: BatchSubmitterService;
+  private withdrawalFinalizer: WithdrawalFinalizerService;
   
   private serviceStatus: ServiceStatus = {
     l1Listener: ServiceState.STOPPED,
     l2Processor: ServiceState.STOPPED,
     l2WithdrawalListener: ServiceState.STOPPED,
     batchSubmitter: ServiceState.STOPPED,
+    withdrawalFinalizer: ServiceState.STOPPED,
   };
   
   private startTime: Date = new Date();
@@ -35,6 +38,7 @@ export class SequencerManagerService {
     this.l2Processor = new L2ProcessorService(config);
     this.l2WithdrawalListener = new L2WithdrawalListenerService(config);
     this.batchSubmitter = new BatchSubmitterService(config);
+    this.withdrawalFinalizer = new WithdrawalFinalizerService(config);
   }
   
   /**
@@ -72,6 +76,12 @@ export class SequencerManagerService {
       this.serviceStatus.batchSubmitter = ServiceState.STARTING;
       await this.batchSubmitter.start();
       this.serviceStatus.batchSubmitter = ServiceState.RUNNING;
+
+      // Start Withdrawal Finalizer
+      logService('SEQUENCER-MANAGER', 'Starting Withdrawal Finalizer...');
+      this.serviceStatus.withdrawalFinalizer = ServiceState.STARTING;
+      await this.withdrawalFinalizer.start();
+      this.serviceStatus.withdrawalFinalizer = ServiceState.RUNNING;
       
       logService('SEQUENCER-MANAGER', '═══════════════════════════════════════');
       logService('SEQUENCER-MANAGER', '✅ ALL SERVICES STARTED SUCCESSFULLY');
@@ -103,6 +113,12 @@ export class SequencerManagerService {
       this.serviceStatus.batchSubmitter = ServiceState.STOPPING;
       await this.batchSubmitter.stop();
       this.serviceStatus.batchSubmitter = ServiceState.STOPPED;
+
+      // Stop Withdrawal Finalizer
+      logService('SEQUENCER-MANAGER', 'Stopping Withdrawal Finalizer...');
+      this.serviceStatus.withdrawalFinalizer = ServiceState.STOPPING;
+      await this.withdrawalFinalizer.stop();
+      this.serviceStatus.withdrawalFinalizer = ServiceState.STOPPED;
       
       // Stop L2 Withdrawal Listener
       logService('SEQUENCER-MANAGER', 'Stopping L2 Withdrawal Listener...');
@@ -152,6 +168,13 @@ export class SequencerManagerService {
   getUptime(): number {
     return Math.floor((Date.now() - this.startTime.getTime()) / 1000);
   }
+
+  getRelayerHealth() {
+    return {
+      status: this.serviceStatus.withdrawalFinalizer,
+      ...this.withdrawalFinalizer.getHealth(),
+    };
+  }
   
   /**
    * Check overall health
@@ -161,7 +184,8 @@ export class SequencerManagerService {
       this.serviceStatus.l1Listener === ServiceState.RUNNING &&
       this.serviceStatus.l2Processor === ServiceState.RUNNING &&
       this.serviceStatus.l2WithdrawalListener === ServiceState.RUNNING &&
-      this.serviceStatus.batchSubmitter === ServiceState.RUNNING
+      this.serviceStatus.batchSubmitter === ServiceState.RUNNING &&
+      this.serviceStatus.withdrawalFinalizer === ServiceState.RUNNING
     );
   }
   
@@ -180,6 +204,9 @@ export class SequencerManagerService {
     }
     if (!this.batchSubmitter.isActive()) {
       this.serviceStatus.batchSubmitter = ServiceState.ERROR;
+    }
+    if (!this.withdrawalFinalizer.isActive()) {
+      this.serviceStatus.withdrawalFinalizer = ServiceState.ERROR;
     }
   }
   
