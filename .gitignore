@@ -1,9 +1,129 @@
-/.env
+# TeQoin repository hygiene
+# Keep source, manifests, lockfiles, docs, tests, and config templates tracked.
+# Keep secrets, runtime state, generated outputs, dependency installs, and local tooling untracked.
+
+# Environment and secrets
 .env
 .env.*
+!.env.example
+!.env.template
+!.env.sample
+*.local.env
+*.secret
+*.secrets
+secrets.*
+**/secrets/**
+**/secure-env-backups/**
+secure-env-backups/
+
+# Private keys, wallets, credentials, certificates
+*private-key*
+*private_key*
+*mnemonic*
+*seedphrase*
+*seed-phrase*
+*keystore*
+*wallet*.txt
+*sequencer_wallet*.txt
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.csr
+id_rsa*
+id_ed25519*
+*.kdbx
+*.auth
+
+# API/cloud credential files
+.aws/
+.gcloud/
+.azure/
+.cloudflare/
+*.credentials
+credentials.json
+service-account*.json
+firebase*.json
+
+# Node / TypeScript
 **/node_modules/
 **/dist/
-**/logs/
 **/build/
-**/.codex
+**/.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Rust
+**/target/
+**/Cargo.lock.bak
+
+# Solidity / Foundry / Hardhat
+**/out/
+**/cache/
+**/broadcast/
+**/artifacts/
+**/typechain-types/
+**/coverage/
+**/coverage.json
+lcov.info
+
+# Logs and runtime data
+**/logs/
 *.log
+*.pid
+*.sock
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.dump
+*.bak
+*.bak.*
+*.backup
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Blockchain/node/indexer runtime data
+geth/
+.ethereum/
+**/chaindata/
+**/ancient/
+**/beacon-data/
+**/validator-data/
+**/postgres-data/
+**/redis-data/
+
+# Generated DA / batch / recovery artifacts
+backups/
+batch-artifact-store/
+da_blob_control_snapshot_*/
+da_blob_confidence_run_*/
+reconstruct/
+recovery_backups/
+security-audit-source-bundle-*/
+security-audit-source-bundle-*.tar.gz
+security-audit-source-bundle-*.tar.gz.sha256
+
+# Local audit/operator generated snapshots
+SECURITY_AUDIT_SNAPSHOT_*.txt
+CLEANUP_MANIFEST_*.md
+
+# Editor / OS
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+.DS_Store
+Thumbs.db
+*.code-workspace
+
+# Local AI/assistant state
+.codex/
+**/.codex/
+.claude/
+**/.claude/
