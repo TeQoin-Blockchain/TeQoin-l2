@@ -1,0 +1,25 @@
+# Default owners. Replace placeholders with real GitHub teams/users.
+* @teqoin/core
+
+# Smart contracts and protocol-critical code
+/sequencer/src/contracts/ @teqoin/protocol @teqoin/security
+/fraudproof/ @teqoin/protocol @teqoin/security
+/abi/ @teqoin/protocol
+/verification/ @teqoin/protocol
+
+# Sequencer, DA, signer, and withdrawal pipeline
+/sequencer/src/services/ @teqoin/protocol @teqoin/platform
+/sequencer/src/scripts/ @teqoin/platform
+/sequencer/src/event-gateway.ts @teqoin/platform
+
+# Rust native core
+/teqoin-core/ @teqoin/protocol @teqoin/rust
+
+# Indexers and APIs
+/l2-indexer/ @teqoin/platform
+/sepolia-indexer/ @teqoin/platform
+
+# DevOps, CI/CD, repo hygiene
+/.github/ @teqoin/platform @teqoin/security
+/docs/ @teqoin/core
+/.gitignore @teqoin/platform @teqoin/security

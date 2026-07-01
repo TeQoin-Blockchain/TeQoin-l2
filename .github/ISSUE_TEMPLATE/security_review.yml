@@ -1,0 +1,33 @@
+name: Security review item
+description: Track security findings, hardening tasks, and audit remediation
+title: "security: "
+labels: ["type: security", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include secrets or exploit details that could put live funds/systems at risk. Use private disclosure for critical vulnerabilities.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Initial severity
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+        - Informational
+        - Needs assessment
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected components
+  - type: textarea
+    id: remediation
+    attributes:
+      label: Proposed remediation

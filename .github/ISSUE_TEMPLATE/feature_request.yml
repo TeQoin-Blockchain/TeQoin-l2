@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a new feature or protocol improvement
+title: "feat: "
+labels: ["type: feature", "needs triage"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be added or changed?
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this needed?
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Smart contracts
+        - Sequencer
+        - Blob DA / batch submission
+        - Fraud proof / verifier
+        - Fee system
+        - Indexer/API
+        - Infrastructure/DevOps
+        - Documentation
+        - Other
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed design
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and rollout plan
