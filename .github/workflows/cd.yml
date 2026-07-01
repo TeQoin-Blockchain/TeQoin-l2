@@ -1,0 +1,100 @@
+name: Manual deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        type: choice
+        required: true
+        options:
+          - testnet
+          - mainnet
+      component:
+        description: Component to deploy
+        type: choice
+        required: true
+        options:
+          - sequencer
+          - l2-indexer
+          - sepolia-indexer
+          - contracts
+      dry_run:
+        description: Run validation only
+        type: boolean
+        required: true
+        default: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  guardrails:
+    name: Deployment guardrails
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ref safety check
+        run: |
+          set -euo pipefail
+          echo "Environment: ${{ inputs.environment }}"
+          echo "Component: ${{ inputs.component }}"
+          echo "Dry run: ${{ inputs.dry_run }}"
+          if [ "${{ inputs.environment }}" = "mainnet" ]; then
+            case "${GITHUB_REF}" in
+              refs/heads/main|refs/tags/v*) ;;
+              *) echo "Mainnet deployments must run from main or v* tag."; exit 1 ;;
+            esac
+          fi
+      - name: Validate repository hygiene
+        run: ./scripts/check-repo-hygiene.sh
+
+  build-before-deploy:
+    name: Build selected component
+    needs: guardrails
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        if: inputs.component != 'contracts'
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Build sequencer
+        if: inputs.component == 'sequencer'
+        run: npm ci --prefix sequencer && npm run build --prefix sequencer
+      - name: Build l2-indexer
+        if: inputs.component == 'l2-indexer'
+        run: npm ci --prefix l2-indexer && npm run build --prefix l2-indexer
+      - name: Build sepolia-indexer
+        if: inputs.component == 'sepolia-indexer'
+        run: npm ci --prefix sepolia-indexer && npm run build --prefix sepolia-indexer
+      - name: Install JS dependencies for contracts
+        if: inputs.component == 'contracts'
+        working-directory: sequencer
+        run: npm ci
+      - uses: foundry-rs/foundry-toolchain@v1
+        if: inputs.component == 'contracts'
+        with:
+          version: stable
+      - name: Validate contracts
+        if: inputs.component == 'contracts'
+        working-directory: sequencer
+        run: forge test -vvv
+
+  deploy:
+    name: Manual deployment placeholder
+    needs: build-before-deploy
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    if: inputs.dry_run == false
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stop before real deployment
+        run: |
+          echo "Deployment automation is intentionally not enabled yet."
+          echo "Wire this job to audited deployment scripts only after secrets, approvals, rollback, and runbooks are complete."
+          exit 1
