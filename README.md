@@ -170,6 +170,8 @@ Start here:
 
 - `CONTRIBUTING.md`
 - `SECURITY.md`
+- `docs/ARCHITECTURE.md`
+- `docs/CONTRACTS.md`
 - `docs/BRANCHING_STRATEGY.md`
 - `docs/DEVELOPMENT_CHECKLIST.md`
 - `docs/ENVIRONMENT_SETUP.md`
