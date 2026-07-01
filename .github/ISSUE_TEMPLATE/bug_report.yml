@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a bug or production/testnet issue
+title: "fix: "
+labels: ["type: bug", "needs triage"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened?
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Smart contracts
+        - Sequencer
+        - Bridge
+        - Blob DA / batch submission
+        - Fraud proof / verifier
+        - L2 indexer/API
+        - Sepolia indexer/API
+        - Websocket/event gateway
+        - Infrastructure/DevOps
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Include whether funds, finality, DA, withdrawals, or availability are affected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Commands, API calls, tx hashes, logs, or blocks.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Branch, commit, network, service, RPC/API endpoint.
