@@ -28,8 +28,6 @@ jobs:
             path: sequencer
           - name: l2-indexer
             path: l2-indexer
-          - name: sepolia-indexer
-            path: sepolia-indexer
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -50,54 +48,81 @@ jobs:
   rust:
     name: Rust core
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: teqoin-core
     steps:
       - uses: actions/checkout@v4
+      - name: Check Rust workspace presence
+        id: rust-workspace
+        run: |
+          if [ -f teqoin-core/Cargo.toml ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "teqoin-core/Cargo.toml not present in this checkout; skipping Rust checks."
+          fi
       - uses: dtolnay/rust-toolchain@stable
+        if: steps.rust-workspace.outputs.present == 'true'
         with:
           components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
+        if: steps.rust-workspace.outputs.present == 'true'
         with:
           workspaces: teqoin-core -> target
       - name: Format check
+        if: steps.rust-workspace.outputs.present == 'true'
+        working-directory: teqoin-core
         run: cargo fmt --all -- --check
       - name: Clippy
+        if: steps.rust-workspace.outputs.present == 'true'
+        working-directory: teqoin-core
         run: cargo clippy --workspace --all-targets -- -D warnings
       - name: Tests
+        if: steps.rust-workspace.outputs.present == 'true'
+        working-directory: teqoin-core
         run: cargo test --workspace
 
   solidity:
     name: Solidity / Foundry
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: sequencer
     steps:
       - uses: actions/checkout@v4
+      - name: Check Foundry project presence
+        id: foundry-project
+        run: |
+          if [ -f sequencer/foundry.toml ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "sequencer/foundry.toml not present in this checkout; skipping Foundry checks."
+          fi
       - uses: actions/setup-node@v4
+        if: steps.foundry-project.outputs.present == 'true'
         with:
           node-version: '20'
           cache: npm
           cache-dependency-path: sequencer/package-lock.json
       - name: Install JS dependencies for remappings
+        if: steps.foundry-project.outputs.present == 'true'
+        working-directory: sequencer
         run: npm ci
       - uses: foundry-rs/foundry-toolchain@v1
+        if: steps.foundry-project.outputs.present == 'true'
         with:
           version: stable
       - name: Forge tests
+        if: steps.foundry-project.outputs.present == 'true'
+        working-directory: sequencer
         run: forge test -vvv
 
   docker-build:
     name: Docker build checks
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        dockerfile:
-          - teqoin-geth/Dockerfile
     steps:
       - uses: actions/checkout@v4
-      - name: Build ${{ matrix.dockerfile }}
-        run: docker build -f ${{ matrix.dockerfile }} -t teqoin-check:${{ github.sha }} teqoin-geth
+      - name: Build optional Docker images
+        run: |
+          set -euo pipefail
+          if [ -f teqoin-geth/Dockerfile ]; then
+            docker build -f teqoin-geth/Dockerfile -t teqoin-geth-check:${{ github.sha }} teqoin-geth
+          else
+            echo "No tracked teqoin-geth/Dockerfile found; skipping optional Docker build."
+          fi

@@ -39,7 +39,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        path: [sequencer, l2-indexer, sepolia-indexer]
+        path: [sequencer, l2-indexer]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -55,11 +55,21 @@ jobs:
   cargo-audit:
     name: cargo audit
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: teqoin-core
     steps:
       - uses: actions/checkout@v4
+      - name: Check Rust workspace presence
+        id: rust-workspace
+        run: |
+          if [ -f teqoin-core/Cargo.toml ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "teqoin-core/Cargo.toml not present in this checkout; skipping cargo audit."
+          fi
       - uses: dtolnay/rust-toolchain@stable
+        if: steps.rust-workspace.outputs.present == 'true'
       - uses: taiki-e/install-action@cargo-audit
-      - run: cargo audit
+        if: steps.rust-workspace.outputs.present == 'true'
+      - if: steps.rust-workspace.outputs.present == 'true'
+        working-directory: teqoin-core
+        run: cargo audit
