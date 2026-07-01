@@ -48,3 +48,16 @@ Enable:
 - Secret scanning
 - Push protection
 - Code scanning where available
+
+## Optional Admin Bootstrap Script
+
+After creating a fine-grained GitHub token with repository administration permission, an owner can apply the baseline branch and environment settings from a shell session without storing the token on disk:
+
+```bash
+export GITHUB_TOKEN='<fine-grained-admin-token>'
+export PRODUCTION_REVIEWER_USER='<github-username-for-mainnet-approval>'
+./scripts/configure-github-repository.sh
+unset GITHUB_TOKEN
+```
+
+The script creates `develop` and `test` from `main` if they do not exist, protects `main`, `develop`, and `test`, and creates `testnet` and `mainnet` environments. It intentionally does not write deployment secrets; add secrets only through GitHub Secrets or environment secrets.
