@@ -71,7 +71,13 @@ jobs:
         run: npm ci --prefix l2-indexer && npm run build --prefix l2-indexer
       - name: Build sepolia-indexer
         if: inputs.component == 'sepolia-indexer'
-        run: npm ci --prefix sepolia-indexer && npm run build --prefix sepolia-indexer
+        run: |
+          test -f sepolia-indexer/package.json || {
+            echo "sepolia-indexer is not present in this checkout.";
+            exit 1;
+          }
+          npm ci --prefix sepolia-indexer
+          npm run build --prefix sepolia-indexer
       - name: Install JS dependencies for contracts
         if: inputs.component == 'contracts'
         working-directory: sequencer
@@ -83,7 +89,12 @@ jobs:
       - name: Validate contracts
         if: inputs.component == 'contracts'
         working-directory: sequencer
-        run: forge test -vvv
+        run: |
+          test -f foundry.toml || {
+            echo "sequencer/foundry.toml is not present in this checkout.";
+            exit 1;
+          }
+          forge test -vvv
 
   deploy:
     name: Manual deployment placeholder
