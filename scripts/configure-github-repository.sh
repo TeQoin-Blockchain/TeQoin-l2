@@ -2,7 +2,7 @@
 set -euo pipefail
 
 OWNER="${GITHUB_OWNER:-0xakileet}"
-REPO="${GITHUB_REPO:-TeQoin}"
+REPO="${GITHUB_REPO:-TeQoin-l2}"
 API="${GITHUB_API_URL:-https://api.github.com}"
 TOKEN="${GITHUB_TOKEN:-}"
 PRODUCTION_REVIEWER_USER="${PRODUCTION_REVIEWER_USER:-}"
