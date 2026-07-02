@@ -97,15 +97,15 @@ jobs:
           forge test -vvv
 
   deploy:
-    name: Manual deployment placeholder
+    name: Manual deployment gate
     needs: build-before-deploy
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     if: inputs.dry_run == false
     steps:
       - uses: actions/checkout@v4
-      - name: Stop before real deployment
+      - name: Deployment guardrail
         run: |
-          echo "Deployment automation is intentionally not enabled yet."
-          echo "Wire this job to audited deployment scripts only after secrets, approvals, rollback, and runbooks are complete."
+          echo "Deployment automation is intentionally disabled until audited deployment scripts, approvals, rollback, and runbooks are complete."
+          echo "This workflow validates release inputs and build readiness only."
           exit 1
