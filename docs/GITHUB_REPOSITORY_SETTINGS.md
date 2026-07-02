@@ -61,3 +61,8 @@ unset GITHUB_TOKEN
 ```
 
 The script creates `develop` and `test` from `main` if they do not exist, protects `main`, `develop`, and `test`, and creates `testnet` and `mainnet` environments. It intentionally does not write deployment secrets; add secrets only through GitHub Secrets or environment secrets.
+
+
+## Private Repository Plan Note
+
+GitHub branch protection and Dependency Review features may require GitHub Pro, Team, Enterprise, or GitHub Advanced Security when the repository is private. If those features are unavailable, keep CI/security workflows active and enforce pull-request discipline operationally until the repository plan supports native enforcement.
