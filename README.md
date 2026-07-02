@@ -5,7 +5,7 @@
 <h1 align="center">TeQoin L2</h1>
 
 <p align="center">
-  Modular Ethereum-aligned Layer 2 infrastructure for high-throughput execution, bridging, indexing, Blob DA experiments, and fraud-proof production hardening.
+  Ethereum-aligned Layer 2 infrastructure for fast execution, low-cost transactions, secure bridging, indexing, and scalable data availability.
 </p>
 
 <p align="center">
@@ -17,30 +17,30 @@
 
 ## Overview
 
-TeQoin L2 is a testnet-stage rollup-style blockchain stack built around an EVM-compatible L2 execution layer, L1 bridge contracts, sequencer services, indexers, Rust-native proof/codec primitives, and production hardening work for Blob DA and fraud-proof verification.
+TeQoin L2 is an EVM-compatible Layer 2 blockchain stack designed for high-throughput execution, efficient settlement, cross-layer bridging, reliable indexing, and modern Ethereum data availability.
 
-The repository is organized for protocol engineering, infrastructure operations, and external security review. It separates runtime services, Solidity contracts, Rust core crates, indexers, deployment workflows, and audit documentation.
+The project combines a TeQoin L2 execution node, sequencer services, L1/L2 bridge contracts, indexer APIs, Rust-native cryptographic primitives, batch compression, Blob DA support, and a growing fraud-proof verification stack.
 
-## Current Status
+## Highlights
 
-| Area | Status |
+| Area | Capability |
 | --- | --- |
-| L2 execution / RPC | Testnet operational; production hardening ongoing. |
-| Sequencer services | Active TypeScript service stack for batches, deposits, withdrawals, DA, signers, and monitoring. |
-| Bridge | L1/L2 bridge flow exists; fraud-proof and finality protections are being hardened. |
-| Blob DA | Controlled Sepolia blob tests verified; permanent activation remains gated by monitoring and funding. |
-| Fraud proofs | Foundation-level contracts and monitors exist; full Cannon-style EVM fault-proof VM is not complete yet. |
-| Rust core | Merkle, batch codec, compression, crypto, and L1 tx manager foundations. |
-| Indexers | L2 and Sepolia indexers support explorer/backend APIs and websocket recovery flows. |
-| Production readiness | CI, security scanning, protected branches, release checklists, and audit scope docs are in place. |
+| EVM compatibility | Ethereum-style JSON-RPC, accounts, contracts, transactions, and tooling. |
+| Fast execution | Short L2 block time for responsive user experience. |
+| Low-cost transactions | L2 execution and batching reduce user-facing cost compared with direct L1 activity. |
+| Secure bridge architecture | L1/L2 bridge lifecycle for deposits, withdrawals, and settlement tracking. |
+| Ethereum data availability | Blob DA and calldata DA paths for L1-available batch data. |
+| Rust core | Merkle, batch codec, compression, crypto, and transaction-manager foundations. |
+| Indexer APIs | Explorer/backend APIs for blocks, transactions, addresses, bridge history, faucet activity, metrics, and websocket replay. |
+| Production workflow | CI, security scanning, branch discipline, release checklists, and audit-ready documentation. |
 
 ## Architecture
 
 ```text
-Ethereum Sepolia / L1
-        |
-        | deposits, withdrawals, batches, DA commitments
-        v
+Ethereum L1
+    |
+    | bridge messages, state commitments, DA references
+    v
 +----------------------+        +----------------------+
 | L1 Diamond Contracts | <----> | Sequencer Services   |
 | Bridge / Sequencer   |        | Batch / DA / Relayer |
@@ -49,7 +49,7 @@ Ethereum Sepolia / L1
         | commitments                   | execution / blocks
         v                               v
 +----------------------+        +----------------------+
-| Blob / Calldata DA   |        | TeQoin L2 Geth       |
+| Blob / Calldata DA   |        | TeQoin L2 Node       |
 | Verification Path    |        | EVM-compatible RPC   |
 +----------------------+        +----------------------+
         |                               |
@@ -66,17 +66,17 @@ Ethereum Sepolia / L1
 | Path | Purpose |
 | --- | --- |
 | `sequencer/` | TypeScript sequencer, L1/L2 bridge services, batch submission, DA/blob services, Solidity contracts, scripts, and tests. |
-| `sequencer/src/contracts/` | Solidity contracts, including Diamond facets, bridge contracts, L2 contracts, faucet, oracle, and fraud-proof additions where tracked. |
+| `sequencer/src/contracts/` | Solidity contracts, including Diamond facets, bridge contracts, L2 contracts, faucet, oracle, and fraud-proof components. |
 | `l2-indexer/` | TeQoin L2 indexer/API for blocks, transactions, bridges, faucet events, websocket replay, metrics, and explorer data. |
 | `sepolia-indexer/` | Sepolia/L1 indexer API and bridge-side transaction history when included in the full engineering checkout. |
 | `teqoin-core/` | Rust native crates for Merkle, batch codec, compression, crypto signatures, L1 transaction manager, and FFI foundations. |
 | `teqoin-geth/` | TeQoin L2 geth implementation/build tree when included in the full engineering checkout. |
 | `abi/` | Exported ABI files for frontend/backend integrations and contract verification. |
-| `faucet/` | Faucet ABI, deployment notes, and frontend/backend integration references. |
-| `fraudproof/` | Fraud-proof design/prototype contracts and storage additions when included in the full audit checkout. |
+| `faucet/` | Faucet ABI, deployment notes, and integration references. |
+| `fraudproof/` | Fraud-proof design and verification components when included in the full engineering checkout. |
 | `fraudproof-evidence/` | Evidence-builder and verifier artifacts for fraud-proof research paths. |
 | `verification/` | Contract verification metadata and deployment verification artifacts. |
-| `docs/` | Engineering workflow, release, production readiness, branch model, and GitHub settings documentation. |
+| `docs/` | Architecture, contracts, audit scope, release, production readiness, branch model, and GitHub settings documentation. |
 | `.github/` | Pull request templates, issue templates, CI, security, and manual deployment workflows. |
 
 ## Core Components
@@ -156,13 +156,12 @@ cd sequencer && forge test
 
 Some directories are optional depending on the checkout. CI skips optional Rust/Foundry/Docker checks when the corresponding project files are not present.
 
-## Security Posture
+## Security
 
 - Secrets must never be committed.
 - Real `.env`, wallet, private-key, keystore, certificate, and cloud credential files are ignored.
-- Branch protection is enabled for `main`, `develop`, and `test`.
-- GitHub security workflows run secret scanning, dependency review, npm audit, and cargo audit.
-- Production deployment is manual and intentionally guarded until deployment scripts, rollback procedures, and external audit requirements are finalized.
+- GitHub security workflows run secret scanning, dependency review where supported, npm audit, and cargo audit.
+- Deployment workflows are manual and guarded.
 
 ## Documentation
 
@@ -181,7 +180,3 @@ Start here:
 - `docs/PRODUCTION_READINESS_CHECKLIST.md`
 - `docs/GITHUB_REPOSITORY_SETTINGS.md`
 - `docs/ROADMAP.md`
-
-## Production Readiness Note
-
-TeQoin is moving from testnet/MVP engineering into production hardening. The project has working infrastructure and verified controlled Blob DA paths, but it should not be represented as a complete mainnet-grade fault-proof rollup until the independent L1-first verifier, full fault-proof VM path, governance controls, monitoring, and external audits are complete.
