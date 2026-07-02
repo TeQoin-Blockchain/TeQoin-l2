@@ -1,25 +1,31 @@
-# Default owners. Replace placeholders with real GitHub teams/users.
-* @teqoin/core
+# Repository ownership
+# Keep this file valid for the current GitHub organization/account.
+# If TeQoin later moves to an organization with teams, replace @0xakileet
+# with the corresponding team handles.
 
-# Smart contracts and protocol-critical code
-/sequencer/src/contracts/ @teqoin/protocol @teqoin/security
-/fraudproof/ @teqoin/protocol @teqoin/security
-/abi/ @teqoin/protocol
-/verification/ @teqoin/protocol
+* @0xakileet
+
+# Protocol-critical code
+/sequencer/src/contracts/ @0xakileet
+/sequencer/src/contracts/diamond/ @0xakileet
+/sequencer/src/contracts/fraudproof/ @0xakileet
+/abi/ @0xakileet
+/verification/ @0xakileet
 
 # Sequencer, DA, signer, and withdrawal pipeline
-/sequencer/src/services/ @teqoin/protocol @teqoin/platform
-/sequencer/src/scripts/ @teqoin/platform
-/sequencer/src/event-gateway.ts @teqoin/platform
+/sequencer/src/services/ @0xakileet
+/sequencer/src/scripts/ @0xakileet
+/sequencer/src/event-gateway.ts @0xakileet
 
 # Rust native core
-/teqoin-core/ @teqoin/protocol @teqoin/rust
+/teqoin-core/ @0xakileet
 
 # Indexers and APIs
-/l2-indexer/ @teqoin/platform
-/sepolia-indexer/ @teqoin/platform
+/l2-indexer/ @0xakileet
+/sepolia-indexer/ @0xakileet
 
-# DevOps, CI/CD, repo hygiene
-/.github/ @teqoin/platform @teqoin/security
-/docs/ @teqoin/core
-/.gitignore @teqoin/platform @teqoin/security
+# DevOps, CI/CD, repo hygiene, and docs
+/.github/ @0xakileet
+/docs/ @0xakileet
+/.gitignore @0xakileet
+/scripts/ @0xakileet
