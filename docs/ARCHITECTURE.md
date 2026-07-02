@@ -1,243 +1,328 @@
 # TeQoin Architecture
 
-This document maps the TeQoin L2 system for protocol engineers, infrastructure partners, auditors, backend developers, and frontend integrators.
+This document describes the TeQoin L2 architecture for protocol engineers, infrastructure partners, auditors, backend developers, frontend integrators, and node operators.
 
-## System Overview
+## Architecture Summary
+
+TeQoin is organized around six core planes:
+
+| Plane | Responsibility |
+| --- | --- |
+| Access plane | Public RPC, REST APIs, websocket feeds, replay recovery, and external integrations. |
+| Execution plane | EVM-compatible L2 block production, state transition, transaction inclusion, and L2 contracts. |
+| Sequencing plane | Batch planning, deposit processing, withdrawal tracking, DA publishing, L1 submission, and signer coordination. |
+| Settlement plane | Ethereum L1 diamond contracts, bridge custody, batch commitments, finality, and DA references. |
+| Data plane | PostgreSQL, Redis where used, indexers, bridge lifecycle records, cursor replay, and analytics. |
+| Verification plane | Merkle checks, codec checks, DA verification, challenger/verifier foundations, monitoring, and audit trails. |
+
+## Full System Diagram
 
 ```mermaid
 flowchart TB
-  subgraph Users[User Layer]
-    wallet[Wallets]
-    apps[Applications]
-    backend[Backend Services]
-  end
+  classDef access fill:#eff6ff,stroke:#2563eb,color:#0f172a
+  classDef exec fill:#ecfdf5,stroke:#059669,color:#0f172a
+  classDef seq fill:#fefce8,stroke:#ca8a04,color:#0f172a
+  classDef l1 fill:#fff7ed,stroke:#ea580c,color:#0f172a
+  classDef data fill:#f8fafc,stroke:#64748b,color:#0f172a
+  classDef verify fill:#fef2f2,stroke:#dc2626,color:#0f172a
 
-  subgraph Public[Public Access Layer]
+  subgraph Access[Access Plane]
     rpc[Public L2 RPC]
-    api[L2 Indexer API]
+    api[L2 REST API]
     ws[Websocket Gateway]
+    replay[Replay By Cursor]
   end
 
-  subgraph L2[L2 Layer]
-    geth[TeQoin L2 Execution Node]
-    sequencer[Sequencer Manager]
-    processor[L2 Deposit Processor]
-    withdrawal[L2 Withdrawal Listener]
+  subgraph Execution[Execution Plane]
+    l2geth[TeQoin L2 Node]
+    l2bridge[L2 Bridge]
+    faucet[L2 Faucet]
+    tokens[Wrapped Tokens]
   end
 
-  subgraph Core[Native Core]
+  subgraph Sequencing[Sequencing Plane]
+    manager[Sequencer Manager]
+    deposits[Deposit Processor]
+    withdrawals[Withdrawal Listener]
+    batcher[Batch Submitter]
+    finalizer[Withdrawal Finalizer]
+    feeOracle[Fee Oracle Updater]
+  end
+
+  subgraph Native[Native Core]
     merkle[Rust Merkle]
     codec[Rust Batch Codec]
-    compression[Rust Compression]
-    txmgr[L1 Tx Manager]
+    zstd[Rust Compression]
+    crypto[Rust Crypto]
+    l1tx[L1 Tx Manager]
   end
 
-  subgraph L1[Ethereum L1 Layer]
-    diamond[L1 Diamond]
-    bridge[Bridge Facet]
-    seqfacet[Sequencer Facet]
+  subgraph Settlement[Ethereum L1 Settlement]
+    diamond[Diamond Proxy]
+    bridgeFacet[Bridge Facet]
+    sequencerFacet[Sequencer Facet]
     da[Blob / Calldata DA]
+    dispute[Fraud-Proof Foundation]
   end
 
-  subgraph Data[Data Services]
+  subgraph Data[Data Plane]
     postgres[(PostgreSQL)]
     redis[(Redis)]
     l2indexer[L2 Indexer]
     l1indexer[L1 Indexer]
   end
 
-  wallet --> rpc
-  apps --> api
-  backend --> ws
-  rpc --> geth
-  geth --> sequencer
-  sequencer --> processor
-  sequencer --> withdrawal
-  sequencer --> merkle
-  sequencer --> codec
-  sequencer --> compression
-  sequencer --> txmgr
-  txmgr --> diamond
-  txmgr --> da
-  diamond --> bridge
-  diamond --> seqfacet
-  geth --> l2indexer
-  diamond --> l1indexer
-  l2indexer --> postgres
-  l1indexer --> postgres
+  subgraph Verification[Verification Plane]
+    l1first[L1-First Verifier]
+    watchtower[Watchtower / Monitors]
+    alerts[Alerting]
+  end
+
+  rpc --> l2geth
   api --> postgres
   ws --> postgres
+  replay --> postgres
+  l2geth --> manager
+  l2geth --> l2indexer
+  l2bridge --> l2indexer
+  manager --> deposits
+  manager --> withdrawals
+  manager --> batcher
+  manager --> finalizer
+  manager --> feeOracle
+  batcher --> merkle
+  batcher --> codec
+  batcher --> zstd
+  batcher --> crypto
+  batcher --> l1tx
+  l1tx --> diamond
+  batcher --> da
+  diamond --> bridgeFacet
+  diamond --> sequencerFacet
+  diamond --> dispute
+  bridgeFacet --> l1indexer
+  sequencerFacet --> l1indexer
+  l2indexer --> postgres
+  l1indexer --> postgres
   api --> redis
+  da --> l1first
+  sequencerFacet --> l1first
+  l1first --> watchtower
+  watchtower --> alerts
+  postgres --> watchtower
+
+  class rpc,api,ws,replay access
+  class l2geth,l2bridge,faucet,tokens exec
+  class manager,deposits,withdrawals,batcher,finalizer,feeOracle seq
+  class merkle,codec,zstd,crypto,l1tx data
+  class diamond,bridgeFacet,sequencerFacet,da,dispute l1
+  class postgres,redis,l2indexer,l1indexer data
+  class l1first,watchtower,alerts verify
 ```
 
-## Layer Responsibilities
-
-| Layer | Responsibility | Main Code Areas |
-| --- | --- | --- |
-| Public access | RPC, API, websocket, frontend/backend integration. | `l2-indexer`, `sepolia-indexer`, RPC proxy config |
-| L2 execution | EVM-compatible block execution and state. | `teqoin-geth`, L2 runtime config |
-| Sequencer | Batch planning, deposits, withdrawals, DA, signers, fee oracle, monitoring. | `sequencer/src/services` |
-| L1 contracts | Bridge custody, batch commitments, DA references, finality and dispute foundations. | `sequencer/src/contracts/diamond` |
-| Rust core | Deterministic Merkle, codec, compression, crypto, and L1 tx manager primitives. | `teqoin-core` |
-| Indexing | Explorer APIs, bridge lifecycle, metrics, websocket replay, analytics. | `l2-indexer`, `sepolia-indexer` |
-| Operations | Docker/systemd/nginx/Postgres/Redis/logging/alerts. | deployment config and runbooks |
-
-## Transaction Lifecycle
+## Protocol Lifecycle
 
 ```mermaid
-sequenceDiagram
-  participant User
-  participant RPC as Public L2 RPC
-  participant L2 as TeQoin L2 Node
-  participant Seq as Sequencer
-  participant Core as Rust Core
-  participant L1 as L1 Contracts
-  participant Idx as Indexers
-
-  User->>RPC: Submit raw transaction
-  RPC->>L2: Broadcast to execution node
-  L2->>L2: Execute and include in L2 block
-  L2-->>Seq: Expose canonical head and block data
-  Seq->>Core: Build roots, codec artifact, compression
-  Seq->>L1: Submit batch commitment / DA reference
-  L1-->>Seq: Confirm commitment
-  L2-->>Idx: Indexed L2 block and tx data
-  L1-->>Idx: Indexed L1 settlement events
-  Idx-->>User: Explorer/API/websocket response
+stateDiagram-v2
+  [*] --> L2Execution
+  L2Execution --> BatchPlanning: New canonical blocks
+  BatchPlanning --> RootConstruction: Select batch range
+  RootConstruction --> Encoding: Build tx and withdrawal roots
+  Encoding --> Compression: Encode and compress batch bytes
+  Compression --> DataAvailability: Publish blob or calldata reference
+  DataAvailability --> L1Commitment: Submit batch metadata
+  L1Commitment --> WithdrawalQueueing: Queue included withdrawals
+  WithdrawalQueueing --> ChallengeWindow: Wait finality period
+  ChallengeWindow --> Finalization: Finalize valid withdrawals
+  Finalization --> Indexed: Expose via APIs and websocket
+  Indexed --> [*]
 ```
 
-## Batch Lifecycle
+## Batch Construction Detail
 
 ```mermaid
 flowchart LR
-  A[Observe L2 head] --> B[Select batch boundary]
-  B --> C[Fetch L2 blocks]
-  C --> D[Build transaction and withdrawal roots]
-  D --> E[Encode batch artifact]
-  E --> F[Compress batch data]
-  F --> G[Publish DA reference]
-  G --> H[Submit L1 batch commitment]
-  H --> I[Queue withdrawals]
-  I --> J[Index and monitor lifecycle]
+  H[L2 head] --> P[Planner]
+  P --> S{Sizing inputs}
+  S --> T[Transaction pressure]
+  S --> W[Withdrawal urgency]
+  S --> G[Gas / DA cost signal]
+  S --> D[Delay guard]
+  T --> R[Selected block range]
+  W --> R
+  G --> R
+  D --> R
+  R --> B[Fetch blocks]
+  B --> M[Build Merkle roots]
+  M --> C[Codec artifact]
+  C --> Z[Compression]
+  Z --> I[Integrity checks]
+  I --> L1[Commit to L1]
 ```
 
-Batch selection is boundary-based and uses smart sizing inputs. The base boundary is `BATCH_SIZE`, while catch-up can select larger ranges rounded to the boundary.
+| Stage | Output | Main Risk | Control |
+| --- | --- | --- | --- |
+| Planning | Batch start/end | Too small, too large, or delayed batch | Smart sizing, max range, urgency guard |
+| Rooting | Transaction and withdrawal roots | Incorrect or stale Merkle root | Rust Merkle with fallback/shadow checks |
+| Encoding | Canonical batch artifact | Incompatible wire format | Rust batch codec validation |
+| Compression | Compressed bytes | Non-reconstructable artifact | Zstd round-trip validation |
+| DA | Blob/calldata reference | Missing or mismatched data | DA commitment and verifier path |
+| L1 commit | Batch metadata | Invalid continuity or permissions | Sequencer facet checks and monitoring |
 
-| Input | Purpose |
-| --- | --- |
-| `BATCH_SIZE` | Base L2 block boundary. |
-| `BATCH_CATCHUP_MAX_BLOCK_STEP` | Maximum catch-up range. |
-| `SMART_BATCH_MAX_TX_COUNT` | Transaction-count pressure guard. |
-| `SMART_BATCH_MAX_WIRE_BYTES` | Encoded/compressed data-size guard. |
-| `SMART_BATCH_MAX_DELAY_BLOCKS` | Maximum delay before submitting. |
-| urgent withdrawal threshold | Prevents withdrawal backlog from waiting too long. |
+## Bridge Lifecycle Detail
 
-## Bridge Lifecycle
-
-### L1 to L2 Deposit
+### Deposit Path
 
 ```mermaid
 sequenceDiagram
+  autonumber
   participant User
-  participant L1Bridge as L1 Bridge
-  participant Listener as L1 Listener
+  participant L1Bridge as L1 Bridge Facet
+  participant L1Indexer as L1 Listener
   participant Sequencer
   participant L2Bridge as L2 Bridge
-  participant Indexer
+  participant L2Indexer as L2 Indexer
+  participant API
 
-  User->>L1Bridge: Deposit ETH / ERC-20
-  L1Bridge-->>Listener: Deposit event
-  Listener->>Sequencer: Persist deposit record
-  Sequencer->>L2Bridge: Process deposit
-  L2Bridge-->>User: Credit ETH / mint mapped token
-  Indexer->>Indexer: Record bridge context
+  User->>L1Bridge: depositETH / depositERC20
+  L1Bridge-->>L1Indexer: Deposit event
+  L1Indexer->>Sequencer: Persist pending deposit
+  Sequencer->>L2Bridge: processDeposit(token, recipient, amount, depositId)
+  L2Bridge-->>Sequencer: Deposit processed or replay-protected revert
+  Sequencer->>L2Indexer: L2 transaction indexed
+  L2Indexer->>API: Bridge context becomes processed
 ```
 
-### L2 to L1 Withdrawal
+### Withdrawal Path
 
 ```mermaid
 sequenceDiagram
+  autonumber
   participant User
   participant L2Bridge as L2 Bridge
   participant Listener as Withdrawal Listener
-  participant Batch as Batch Submitter
-  participant L1Bridge as L1 Bridge
+  participant Batcher as Batch Submitter
+  participant L1Bridge as L1 Bridge Facet
   participant Finalizer
+  participant API
 
-  User->>L2Bridge: Initiate withdrawal
-  L2Bridge-->>Listener: Withdrawal event
-  Listener->>Batch: Store withdrawal for batch root
-  Batch->>L1Bridge: Commit batch and queue withdrawal
-  L1Bridge-->>Finalizer: Finalizable after challenge window
-  Finalizer->>L1Bridge: Finalize withdrawal
-  L1Bridge-->>User: Release funds
+  User->>L2Bridge: initiateWithdrawal(token, to, amount)
+  L2Bridge-->>Listener: WithdrawalInitiated
+  Listener->>Batcher: Store withdrawal candidate
+  Batcher->>Batcher: Include withdrawal in batch root
+  Batcher->>L1Bridge: Queue withdrawal against committed batch
+  L1Bridge-->>Finalizer: Withdrawal enters finality window
+  Finalizer->>L1Bridge: finalizeWithdrawal after challenge period
+  L1Bridge-->>User: Release L1 asset
+  API-->>User: Status moves queued -> finalized
 ```
 
-## Data Availability Flow
+## Data Availability Modes
 
 ```mermaid
 flowchart TB
-  batch[Batch bytes] --> compress[Zstd compression]
-  compress --> codec[Rust batch codec]
-  codec --> da{DA mode}
-  da --> blob[Ethereum blob transaction]
-  da --> calldata[Ethereum calldata fallback]
-  blob --> commit[L1 DA commitment]
-  calldata --> commit
-  commit --> verifier[L1-first verifier]
-  verifier --> roots[Verify tx root, withdrawal root, range, and state roots]
+  A[Batch bytes] --> B[Compression]
+  B --> C[Codec validation]
+  C --> Mode{L1 DA mode}
+  Mode --> None[None / legacy mode]
+  Mode --> Calldata[Calldata mode]
+  Mode --> Blob[Blob mode]
+  Calldata --> Small[Small-batch fallback]
+  Blob --> Type3[EIP-4844 type-3 transaction]
+  Type3 --> Hashes[Blob versioned hashes]
+  Hashes --> L1Commit[Commitment stored on L1]
+  Small --> L1Commit
+  L1Commit --> Verify[Independent verifier reconstruction]
 ```
 
-R2/S3-style object storage is not canonical DA. Canonical data availability is designed around Ethereum L1-available data.
+| Mode | Intended Use | Production Notes |
+| --- | --- | --- |
+| None / legacy | Controlled compatibility and migration paths. | Should not be allowed past mandatory DA activation for production batches. |
+| Calldata | Small-batch fallback and emergency compatibility. | Expensive and not viable for large batches. |
+| Blob | Canonical scalable DA path. | Requires lifecycle tracking, beacon verification, fee monitoring, and mismatch alerts. |
 
-## Indexer And Websocket Flow
+## Indexer And Websocket Recovery
 
 ```mermaid
 flowchart LR
-  l2[L2 Node] --> blockListener[Block Listener]
-  l1[L1 Contracts] --> bridgeListener[Bridge Listener]
-  blockListener --> db[(PostgreSQL)]
-  bridgeListener --> db
-  db --> api[REST API]
-  db --> ws[Websocket Gateway]
-  ws --> consumer[Backend Consumer]
-  consumer --> replay[Replay API by Cursor]
-  replay --> db
+  L2[L2 blocks] --> L2I[L2 indexer]
+  L1[L1 events] --> L1I[L1 indexer]
+  L2I --> DB[(PostgreSQL)]
+  L1I --> DB
+  DB --> REST[REST APIs]
+  DB --> WS[Websocket event stream]
+  WS --> Consumer[Backend consumer]
+  Consumer --> Cursor[Last processed cursor]
+  Cursor --> Replay[Replay API: from cursor X to cursor Y]
+  Replay --> DB
 ```
 
-## Trust Boundaries
-
-| Boundary | Control |
-| --- | --- |
-| Public RPC | Safe namespaces, rate limits, proxy controls. |
-| Sequencer signer | Key separation, funding monitoring, nonce/replacement handling. |
-| L1 owner/admin | Intended for multisig/timelock governance before production launch. |
-| DA commitment | Blob/calldata reference and verifier path. |
-| Indexer/API | Replayable data, DB indexes, monitoring, rate limits. |
-| Websocket consumers | Durable cursor and replay API. |
+The websocket design assumes consumers persist the last processed cursor. If they disconnect, they can recover the exact missed range through the replay API instead of relying on best-effort live delivery.
 
 ## Operational Topology
 
 ```mermaid
 flowchart TB
-  lb[Load Balancer / RPC Gateway]
-  rpc1[RPC Node A]
-  rpc2[RPC Node B]
-  indexer[Indexers]
-  db[(PostgreSQL)]
-  redis[(Redis)]
-  monitor[Monitoring]
+  subgraph Edge[Edge And Access]
+    lb[Load Balancer]
+    rpcproxy[RPC Proxy]
+    apiProxy[API Proxy]
+  end
 
-  lb --> rpc1
-  lb --> rpc2
-  rpc1 --> monitor
-  rpc2 --> monitor
-  rpc1 --> indexer
-  rpc2 --> indexer
-  indexer --> db
-  indexer --> redis
-  db --> monitor
-  redis --> monitor
+  subgraph Nodes[Node Layer]
+    rpcA[L2 RPC Node A]
+    rpcB[L2 RPC Node B]
+    sequencer[Sequencer Host]
+  end
+
+  subgraph Data[Data Layer]
+    pgPrimary[(PostgreSQL Primary)]
+    pgReplica[(PostgreSQL Replica)]
+    redis[(Redis)]
+  end
+
+  subgraph Observability[Observability]
+    logs[Central Logs]
+    metrics[Metrics]
+    alerts[Alerts]
+  end
+
+  lb --> rpcproxy
+  lb --> apiProxy
+  rpcproxy --> rpcA
+  rpcproxy --> rpcB
+  apiProxy --> pgReplica
+  sequencer --> pgPrimary
+  rpcA --> pgPrimary
+  rpcB --> pgPrimary
+  pgPrimary --> pgReplica
+  redis --> apiProxy
+  rpcA --> metrics
+  rpcB --> metrics
+  sequencer --> metrics
+  pgPrimary --> metrics
+  metrics --> alerts
+  logs --> alerts
 ```
 
-For public mainnet operation, RPC, indexer, database, and sequencer roles should be separated as traffic grows.
+## Trust Boundaries And Controls
+
+| Boundary | Risk | Expected Control |
+| --- | --- | --- |
+| Public RPC | Unsafe JSON-RPC methods, high-cardinality requests, DoS. | Proxy filtering, safe namespaces, rate limits, monitoring. |
+| Sequencer signer | Key compromise, nonce collision, insufficient funding. | Key separation, signer monitoring, replacement policy, restricted env handling. |
+| L1 owner/admin | Unsafe upgrade or emergency operation. | Multisig/timelock path, audit trail, runbooks, selector checks. |
+| DA commitment | Missing, mismatched, or unverifiable batch data. | Blob hash binding, lifecycle state machine, beacon verification, alerts. |
+| Bridge withdrawals | Invalid batch affecting withdrawal finality. | Withdrawal root binding, challenge window, invalidated batch checks. |
+| Indexer data | Lost websocket events or stale API responses. | Durable DB, cursor replay, lag metrics, endpoint timing alerts. |
+
+## Production Readiness Focus Areas
+
+| Area | Target |
+| --- | --- |
+| DA enforcement | Blob DA permanently enabled only after repeated controlled verification and monitoring green state. |
+| Independent verification | Batch reconstruction from L1-available data without trusting local artifacts. |
+| Fraud proofs | Move from foundation-level dispute wiring toward full deterministic execution and fault-proof VM path. |
+| Fee accounting | Shadow accounting for real DA cost versus L2 fee charged, then enforcement in transaction admission. |
+| Governance | Multisig/timelock, role separation, deployment checklist, and emergency runbooks. |
+| External audit | Contract scope, storage diffs, ABIs, deployment records, test reports, and known limitations documented. |
