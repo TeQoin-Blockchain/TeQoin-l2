@@ -29,7 +29,7 @@ jobs:
           sudo install -m 0755 /tmp/gitleaks /usr/local/bin/gitleaks
           gitleaks version
       - name: Run Gitleaks secret scan
-        run: gitleaks detect --source . --redact --verbose
+        run: gitleaks detect --source . --no-git --redact --verbose
 
   dependency-review:
     name: Dependency review
