@@ -20,9 +20,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Gitleaks CLI
+        run: |
+          set -euo pipefail
+          curl -sSfL https://raw.githubusercontent.com/gitleaks/gitleaks/master/install.sh | sh -s -- -b /usr/local/bin
+      - name: Run Gitleaks secret scan
+        run: gitleaks detect --source . --redact --verbose
 
   dependency-review:
     name: Dependency review
