@@ -1,0 +1,631 @@
+[
+  {
+    "type": "function",
+    "name": "addSequencer",
+    "inputs": [
+      {
+        "name": "sequencer",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "addSequencers",
+    "inputs": [
+      {
+        "name": "sequencers",
+        "type": "address[]",
+        "internalType": "address[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "anchorStateCommitment",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2EndBlock",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "postStateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getActiveSequencers",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address[]",
+        "internalType": "address[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getBatch",
+    "inputs": [
+      {
+        "name": "l2BlockNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "stateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "l1BlockNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "sequencer",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getBatchWithdrawalRoot",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getBlocksPerRotation",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "getCurrentSequencer",
+    "inputs": [
+      {
+        "name": "l2BlockNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getLatestBatchNumber",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getLatestL2Block",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getSequencerCount",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStateCommitment",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "l2StartBlock",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2EndBlock",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "preStateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "postStateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "withdrawalsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "sequencer",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "exists",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isBatchRootSet",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isRegisteredSequencer",
+    "inputs": [
+      {
+        "name": "sequencer",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isSequencerTurn",
+    "inputs": [
+      {
+        "name": "sequencer",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "l2BlockNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "removeSequencer",
+    "inputs": [
+      {
+        "name": "sequencer",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "submitBatch",
+    "inputs": [
+      {
+        "name": "l2BlockNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "stateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "withdrawalsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "submitBatch",
+    "inputs": [
+      {
+        "name": "l2BlockNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "stateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "submitStateBatch",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2StartBlock",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2EndBlock",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "preStateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "postStateRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "withdrawalsRoot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "BatchStateCommitmentSubmitted",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2StartBlock",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2EndBlock",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "preStateRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "postStateRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "withdrawalsRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "sequencer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BatchSubmitted",
+    "inputs": [
+      {
+        "name": "l2BlockNumber",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "stateRoot",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "sequencer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BatchSubmittedV3",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2BlockNumber",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "stateRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "transactionsRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "withdrawalsRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "sequencer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SequencerAdded",
+    "inputs": [
+      {
+        "name": "sequencer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SequencerRemoved",
+    "inputs": [
+      {
+        "name": "sequencer",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StateCommitmentAnchored",
+    "inputs": [
+      {
+        "name": "batchNumber",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "l2EndBlock",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "postStateRoot",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  }
+]
